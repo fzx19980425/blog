@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Electron 开发最佳实践 | 胖虎 博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="胖虎 个人技术博客">
+    
+    <link rel="preload" href="/welcome/assets/css/0.styles.6681cbdc.css" as="style"><link rel="preload" href="/welcome/assets/js/app.c32994ef.js" as="script"><link rel="preload" href="/welcome/assets/js/2.f2b8224f.js" as="script"><link rel="preload" href="/welcome/assets/js/1.57fa854c.js" as="script"><link rel="preload" href="/welcome/assets/js/83.645eaf44.js" as="script"><link rel="prefetch" href="/welcome/assets/js/10.f277d560.js"><link rel="prefetch" href="/welcome/assets/js/100.c27f1faa.js"><link rel="prefetch" href="/welcome/assets/js/101.f3ff0c58.js"><link rel="prefetch" href="/welcome/assets/js/102.305c70a3.js"><link rel="prefetch" href="/welcome/assets/js/103.a9189cf3.js"><link rel="prefetch" href="/welcome/assets/js/104.3cfd0b2a.js"><link rel="prefetch" href="/welcome/assets/js/105.366935b0.js"><link rel="prefetch" href="/welcome/assets/js/106.72755896.js"><link rel="prefetch" href="/welcome/assets/js/107.9264a915.js"><link rel="prefetch" href="/welcome/assets/js/108.04897a57.js"><link rel="prefetch" href="/welcome/assets/js/109.9b1bbde9.js"><link rel="prefetch" href="/welcome/assets/js/11.832152cf.js"><link rel="prefetch" href="/welcome/assets/js/110.d0b53b92.js"><link rel="prefetch" href="/welcome/assets/js/111.16187ada.js"><link rel="prefetch" href="/welcome/assets/js/112.82d66908.js"><link rel="prefetch" href="/welcome/assets/js/113.4ad88615.js"><link rel="prefetch" href="/welcome/assets/js/114.1ba84168.js"><link rel="prefetch" href="/welcome/assets/js/115.1b98eac3.js"><link rel="prefetch" href="/welcome/assets/js/116.dd8c6b70.js"><link rel="prefetch" href="/welcome/assets/js/117.998f62b7.js"><link rel="prefetch" href="/welcome/assets/js/118.01487f42.js"><link rel="prefetch" href="/welcome/assets/js/119.4bfb0992.js"><link rel="prefetch" href="/welcome/assets/js/12.5bdf8e02.js"><link rel="prefetch" href="/welcome/assets/js/120.56d23f63.js"><link rel="prefetch" href="/welcome/assets/js/121.bcd040de.js"><link rel="prefetch" href="/welcome/assets/js/122.cc32a1a1.js"><link rel="prefetch" href="/welcome/assets/js/123.32c56b28.js"><link rel="prefetch" href="/welcome/assets/js/124.167f4df4.js"><link rel="prefetch" href="/welcome/assets/js/125.b78a38d2.js"><link rel="prefetch" href="/welcome/assets/js/126.360548ab.js"><link rel="prefetch" href="/welcome/assets/js/127.419dff18.js"><link rel="prefetch" href="/welcome/assets/js/128.49a6a318.js"><link rel="prefetch" href="/welcome/assets/js/129.c55a9d84.js"><link rel="prefetch" href="/welcome/assets/js/13.09410521.js"><link rel="prefetch" href="/welcome/assets/js/130.eb1db333.js"><link rel="prefetch" href="/welcome/assets/js/131.2cd64bf0.js"><link rel="prefetch" href="/welcome/assets/js/132.d5b75152.js"><link rel="prefetch" href="/welcome/assets/js/133.8d59483a.js"><link rel="prefetch" href="/welcome/assets/js/134.8cc85965.js"><link rel="prefetch" href="/welcome/assets/js/135.0abc953b.js"><link rel="prefetch" href="/welcome/assets/js/136.67e9c61c.js"><link rel="prefetch" href="/welcome/assets/js/137.41707e0b.js"><link rel="prefetch" href="/welcome/assets/js/138.9d29afb9.js"><link rel="prefetch" href="/welcome/assets/js/139.da6e5c56.js"><link rel="prefetch" href="/welcome/assets/js/14.1f0cfc71.js"><link rel="prefetch" href="/welcome/assets/js/140.1899779f.js"><link rel="prefetch" href="/welcome/assets/js/141.c9aaed65.js"><link rel="prefetch" href="/welcome/assets/js/142.18c866cf.js"><link rel="prefetch" href="/welcome/assets/js/143.0f7ccf13.js"><link rel="prefetch" href="/welcome/assets/js/144.a5a2b55a.js"><link rel="prefetch" href="/welcome/assets/js/145.8bbc9190.js"><link rel="prefetch" href="/welcome/assets/js/146.7309e37e.js"><link rel="prefetch" href="/welcome/assets/js/147.a8c9f9ad.js"><link rel="prefetch" href="/welcome/assets/js/148.7d0e175a.js"><link rel="prefetch" href="/welcome/assets/js/149.aab12723.js"><link rel="prefetch" href="/welcome/assets/js/15.5b0c6b3a.js"><link rel="prefetch" href="/welcome/assets/js/150.b64ccd41.js"><link rel="prefetch" href="/welcome/assets/js/151.1bbaed8b.js"><link rel="prefetch" href="/welcome/assets/js/152.b4d8a81d.js"><link rel="prefetch" href="/welcome/assets/js/153.e35fe96b.js"><link rel="prefetch" href="/welcome/assets/js/154.7e495f1f.js"><link rel="prefetch" href="/welcome/assets/js/155.412f572c.js"><link rel="prefetch" href="/welcome/assets/js/156.05da829b.js"><link rel="prefetch" href="/welcome/assets/js/157.f0017167.js"><link rel="prefetch" href="/welcome/assets/js/158.379c686b.js"><link rel="prefetch" href="/welcome/assets/js/159.212511b0.js"><link rel="prefetch" href="/welcome/assets/js/16.83686824.js"><link rel="prefetch" href="/welcome/assets/js/160.4f8d51d7.js"><link rel="prefetch" href="/welcome/assets/js/161.540f5619.js"><link rel="prefetch" href="/welcome/assets/js/162.55d92a94.js"><link rel="prefetch" href="/welcome/assets/js/163.6ba0970a.js"><link rel="prefetch" href="/welcome/assets/js/164.20c0b8ef.js"><link rel="prefetch" href="/welcome/assets/js/165.40bf8ac2.js"><link rel="prefetch" href="/welcome/assets/js/166.8f03a4b5.js"><link rel="prefetch" href="/welcome/assets/js/167.6a6840c1.js"><link rel="prefetch" href="/welcome/assets/js/168.2c7cd31b.js"><link rel="prefetch" href="/welcome/assets/js/169.a383195b.js"><link rel="prefetch" href="/welcome/assets/js/17.8e1a6509.js"><link rel="prefetch" href="/welcome/assets/js/170.1d1dbc0a.js"><link rel="prefetch" href="/welcome/assets/js/171.fd44818f.js"><link rel="prefetch" href="/welcome/assets/js/172.07754dc6.js"><link rel="prefetch" href="/welcome/assets/js/173.417431dd.js"><link rel="prefetch" href="/welcome/assets/js/174.95d00e82.js"><link rel="prefetch" href="/welcome/assets/js/175.9c81a19a.js"><link rel="prefetch" href="/welcome/assets/js/176.9e7649a1.js"><link rel="prefetch" href="/welcome/assets/js/177.ef0da55d.js"><link rel="prefetch" href="/welcome/assets/js/178.0e78e82e.js"><link rel="prefetch" href="/welcome/assets/js/179.46fb5d97.js"><link rel="prefetch" href="/welcome/assets/js/18.105ba92d.js"><link rel="prefetch" href="/welcome/assets/js/180.cd27f596.js"><link rel="prefetch" href="/welcome/assets/js/181.089e4a13.js"><link rel="prefetch" href="/welcome/assets/js/182.6c1bf2f4.js"><link rel="prefetch" href="/welcome/assets/js/183.993fd33c.js"><link rel="prefetch" href="/welcome/assets/js/184.f6475b67.js"><link rel="prefetch" href="/welcome/assets/js/185.7d9ab35c.js"><link rel="prefetch" href="/welcome/assets/js/186.390bedfa.js"><link rel="prefetch" href="/welcome/assets/js/187.af79cc43.js"><link rel="prefetch" href="/welcome/assets/js/188.e8beed88.js"><link rel="prefetch" href="/welcome/assets/js/189.95043c4c.js"><link rel="prefetch" href="/welcome/assets/js/19.6d3610bc.js"><link rel="prefetch" href="/welcome/assets/js/190.29dc3685.js"><link rel="prefetch" href="/welcome/assets/js/191.832619ef.js"><link rel="prefetch" href="/welcome/assets/js/192.b56215e2.js"><link rel="prefetch" href="/welcome/assets/js/193.8cb70509.js"><link rel="prefetch" href="/welcome/assets/js/194.79b483fd.js"><link rel="prefetch" href="/welcome/assets/js/195.9ed78386.js"><link rel="prefetch" href="/welcome/assets/js/196.b21e5900.js"><link rel="prefetch" href="/welcome/assets/js/197.3286c3d9.js"><link rel="prefetch" href="/welcome/assets/js/198.bef70cdc.js"><link rel="prefetch" href="/welcome/assets/js/199.1f226ffc.js"><link rel="prefetch" href="/welcome/assets/js/20.53600d06.js"><link rel="prefetch" href="/welcome/assets/js/200.13b8ca89.js"><link rel="prefetch" href="/welcome/assets/js/201.323ef3a2.js"><link rel="prefetch" href="/welcome/assets/js/202.e5a2721e.js"><link rel="prefetch" href="/welcome/assets/js/203.fde4d729.js"><link rel="prefetch" href="/welcome/assets/js/204.78f0f909.js"><link rel="prefetch" href="/welcome/assets/js/205.a5dfa221.js"><link rel="prefetch" href="/welcome/assets/js/206.701c88af.js"><link rel="prefetch" href="/welcome/assets/js/207.c2d566b7.js"><link rel="prefetch" href="/welcome/assets/js/208.91e0cadb.js"><link rel="prefetch" href="/welcome/assets/js/209.df869ce6.js"><link rel="prefetch" href="/welcome/assets/js/21.ce3bb583.js"><link rel="prefetch" href="/welcome/assets/js/210.26e6fd1c.js"><link rel="prefetch" href="/welcome/assets/js/211.f2ff073c.js"><link rel="prefetch" href="/welcome/assets/js/212.e67c8baa.js"><link rel="prefetch" href="/welcome/assets/js/213.fe9e67f8.js"><link rel="prefetch" href="/welcome/assets/js/214.c401371d.js"><link rel="prefetch" href="/welcome/assets/js/215.47325cdc.js"><link rel="prefetch" href="/welcome/assets/js/216.6223bb04.js"><link rel="prefetch" href="/welcome/assets/js/217.0f9dc548.js"><link rel="prefetch" href="/welcome/assets/js/218.24cf48c0.js"><link rel="prefetch" href="/welcome/assets/js/219.e3a81d25.js"><link rel="prefetch" href="/welcome/assets/js/22.c3d676d5.js"><link rel="prefetch" href="/welcome/assets/js/220.62614bdc.js"><link rel="prefetch" href="/welcome/assets/js/23.a2321d85.js"><link rel="prefetch" href="/welcome/assets/js/24.c6db9a0b.js"><link rel="prefetch" href="/welcome/assets/js/25.75e28bb4.js"><link rel="prefetch" href="/welcome/assets/js/26.007a7425.js"><link rel="prefetch" href="/welcome/assets/js/27.83fd4285.js"><link rel="prefetch" href="/welcome/assets/js/28.a0571a21.js"><link rel="prefetch" href="/welcome/assets/js/29.0a425eb2.js"><link rel="prefetch" href="/welcome/assets/js/3.5ce4ea28.js"><link rel="prefetch" href="/welcome/assets/js/30.30c19a85.js"><link rel="prefetch" href="/welcome/assets/js/31.8392e893.js"><link rel="prefetch" href="/welcome/assets/js/32.c8c94890.js"><link rel="prefetch" href="/welcome/assets/js/33.fbe3d1cf.js"><link rel="prefetch" href="/welcome/assets/js/34.f20a92de.js"><link rel="prefetch" href="/welcome/assets/js/35.1d1c0d4e.js"><link rel="prefetch" href="/welcome/assets/js/36.df77e06d.js"><link rel="prefetch" href="/welcome/assets/js/37.feb0698b.js"><link rel="prefetch" href="/welcome/assets/js/38.bc20b233.js"><link rel="prefetch" href="/welcome/assets/js/39.f11a62e1.js"><link rel="prefetch" href="/welcome/assets/js/4.ee0de53f.js"><link rel="prefetch" href="/welcome/assets/js/40.7d5864b0.js"><link rel="prefetch" href="/welcome/assets/js/41.868ca4ae.js"><link rel="prefetch" href="/welcome/assets/js/42.4e507119.js"><link rel="prefetch" href="/welcome/assets/js/43.5e1e6bf9.js"><link rel="prefetch" href="/welcome/assets/js/44.40f12f11.js"><link rel="prefetch" href="/welcome/assets/js/45.6ae2878e.js"><link rel="prefetch" href="/welcome/assets/js/46.a1851fdb.js"><link rel="prefetch" href="/welcome/assets/js/47.5681f4bb.js"><link rel="prefetch" href="/welcome/assets/js/48.b1388b5e.js"><link rel="prefetch" href="/welcome/assets/js/49.18a8074e.js"><link rel="prefetch" href="/welcome/assets/js/5.68a4f8c1.js"><link rel="prefetch" href="/welcome/assets/js/50.52b44674.js"><link rel="prefetch" href="/welcome/assets/js/51.6a584ab5.js"><link rel="prefetch" href="/welcome/assets/js/52.e9764135.js"><link rel="prefetch" href="/welcome/assets/js/53.d7d65635.js"><link rel="prefetch" href="/welcome/assets/js/54.05840490.js"><link rel="prefetch" href="/welcome/assets/js/55.40b5dcf5.js"><link rel="prefetch" href="/welcome/assets/js/56.23ae9fdf.js"><link rel="prefetch" href="/welcome/assets/js/57.a0a8380a.js"><link rel="prefetch" href="/welcome/assets/js/58.fa0da397.js"><link rel="prefetch" href="/welcome/assets/js/59.757bc139.js"><link rel="prefetch" href="/welcome/assets/js/6.f20b43ab.js"><link rel="prefetch" href="/welcome/assets/js/60.e1d3cce6.js"><link rel="prefetch" href="/welcome/assets/js/61.14827680.js"><link rel="prefetch" href="/welcome/assets/js/62.462365fc.js"><link rel="prefetch" href="/welcome/assets/js/63.c4ba5928.js"><link rel="prefetch" href="/welcome/assets/js/64.e47b13c6.js"><link rel="prefetch" href="/welcome/assets/js/65.619b241e.js"><link rel="prefetch" href="/welcome/assets/js/66.5605e9bb.js"><link rel="prefetch" href="/welcome/assets/js/67.36d82e21.js"><link rel="prefetch" href="/welcome/assets/js/68.3219d211.js"><link rel="prefetch" href="/welcome/assets/js/69.184f8604.js"><link rel="prefetch" href="/welcome/assets/js/7.67164775.js"><link rel="prefetch" href="/welcome/assets/js/70.9e8ec77f.js"><link rel="prefetch" href="/welcome/assets/js/71.078ebb9c.js"><link rel="prefetch" href="/welcome/assets/js/72.5e56f6a5.js"><link rel="prefetch" href="/welcome/assets/js/73.66dfe7fa.js"><link rel="prefetch" href="/welcome/assets/js/74.35996075.js"><link rel="prefetch" href="/welcome/assets/js/75.b0440e84.js"><link rel="prefetch" href="/welcome/assets/js/76.fec4ba81.js"><link rel="prefetch" href="/welcome/assets/js/77.692405ee.js"><link rel="prefetch" href="/welcome/assets/js/78.726de00a.js"><link rel="prefetch" href="/welcome/assets/js/79.95104600.js"><link rel="prefetch" href="/welcome/assets/js/80.3badf199.js"><link rel="prefetch" href="/welcome/assets/js/81.9a549ea0.js"><link rel="prefetch" href="/welcome/assets/js/82.45900f4c.js"><link rel="prefetch" href="/welcome/assets/js/84.b464576e.js"><link rel="prefetch" href="/welcome/assets/js/85.c6c6f214.js"><link rel="prefetch" href="/welcome/assets/js/86.1af0833e.js"><link rel="prefetch" href="/welcome/assets/js/87.192e3aae.js"><link rel="prefetch" href="/welcome/assets/js/88.e1f4ffc0.js"><link rel="prefetch" href="/welcome/assets/js/89.e048723c.js"><link rel="prefetch" href="/welcome/assets/js/90.0a44aeb2.js"><link rel="prefetch" href="/welcome/assets/js/91.176a1f8d.js"><link rel="prefetch" href="/welcome/assets/js/92.2869b4bb.js"><link rel="prefetch" href="/welcome/assets/js/93.8063abd7.js"><link rel="prefetch" href="/welcome/assets/js/94.6e4a61ae.js"><link rel="prefetch" href="/welcome/assets/js/95.9a361852.js"><link rel="prefetch" href="/welcome/assets/js/96.ca2eba35.js"><link rel="prefetch" href="/welcome/assets/js/97.0f6af1c7.js"><link rel="prefetch" href="/welcome/assets/js/98.7d3094c4.js"><link rel="prefetch" href="/welcome/assets/js/99.3f98922d.js"><link rel="prefetch" href="/welcome/assets/js/vendors~docsearch.34c2b646.js">
+    <link rel="stylesheet" href="/welcome/assets/css/0.styles.6681cbdc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/welcome/" class="home-link router-link-active"><!----> <span class="site-name">胖虎 博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/welcome/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/jquery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/weixin/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/electron/" class="nav-link router-link-active">
+  Electron
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/node/" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="UI" class="dropdown-title"><span class="title">UI</span> <span class="arrow down"></span></button> <button type="button" aria-label="UI" class="mobile-dropdown-title"><span class="title">UI</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/ui/" class="nav-link">
+  设计规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于我" class="dropdown-title"><span class="title">关于我</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于我" class="mobile-dropdown-title"><span class="title">关于我</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/fzx19980425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/fzx0425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/1900382830734376" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/welcome/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/jquery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/weixin/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/electron/" class="nav-link router-link-active">
+  Electron
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/node/" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="UI" class="dropdown-title"><span class="title">UI</span> <span class="arrow down"></span></button> <button type="button" aria-label="UI" class="mobile-dropdown-title"><span class="title">UI</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/ui/" class="nav-link">
+  设计规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于我" class="dropdown-title"><span class="title">关于我</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于我" class="mobile-dropdown-title"><span class="title">关于我</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/fzx19980425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/fzx0425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/1900382830734376" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础入门</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>核心功能</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶主题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>实战案例</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>最佳实践</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/welcome/frontend/electron/best-practices/architecture.html" class="sidebar-link">架构设计</a></li><li><a href="/welcome/frontend/electron/best-practices/development-practices.html" aria-current="page" class="active sidebar-link">开发规范</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/best-practices/development-practices.html#开发环境" class="sidebar-link">开发环境</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/best-practices/development-practices.html#代码组织" class="sidebar-link">代码组织</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/best-practices/development-practices.html#开发流程" class="sidebar-link">开发流程</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/best-practices/development-practices.html#调试技巧" class="sidebar-link">调试技巧</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/best-practices/development-practices.html#相关资源" class="sidebar-link">相关资源</a></li></ul></li><li><a href="/welcome/frontend/electron/best-practices/security-practices.html" class="sidebar-link">安全实践</a></li><li><a href="/welcome/frontend/electron/best-practices/testing-practices.html" class="sidebar-link">测试实践</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="electron-开发最佳实践"><a href="#electron-开发最佳实践" class="header-anchor">#</a> Electron 开发最佳实践</h1> <h2 id="开发环境"><a href="#开发环境" class="header-anchor">#</a> 开发环境</h2> <h3 id="_1-开发工具"><a href="#_1-开发工具" class="header-anchor">#</a> 1. 开发工具</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 开发工具配置</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> electronReload <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron-reload'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">DevelopmentTools</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置热重载</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupHotReload</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 配置调试工具</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupDebugTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 配置构建工具</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupBuildTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupHotReload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置热重载</span>
+    <span class="token function">electronReload</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">electron</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">,</span> <span class="token string">'.bin'</span><span class="token punctuation">,</span> <span class="token string">'electron'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">hardResetMethod</span><span class="token operator">:</span> <span class="token string">'exit'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">forceHardReset</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupDebugTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置调试工具</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'development'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 启用 DevTools</span>
+      app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'ready'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">setDevToolsExtensions</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+          path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">,</span> <span class="token string">'devtron'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      <span class="token comment">// 配置日志</span>
+      <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron-log'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>transports<span class="token punctuation">.</span>file<span class="token punctuation">.</span>level <span class="token operator">=</span> <span class="token string">'debug'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupBuildTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置构建工具</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>webpackConfig <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">mode</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">main</span><span class="token operator">:</span> <span class="token string">'./src/main.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">renderer</span><span class="token operator">:</span> <span class="token string">'./src/renderer.js'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">'[name].js'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">main</span><span class="token operator">:</span> <span class="token string">'electron-main'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">renderer</span><span class="token operator">:</span> <span class="token string">'electron-renderer'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>DefinePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          <span class="token string-property property">'process.env.NODE_ENV'</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-开发配置"><a href="#_2-开发配置" class="header-anchor">#</a> 2. 开发配置</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 开发配置</span>
+<span class="token keyword">class</span> <span class="token class-name">DevelopmentConfig</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置开发环境</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupEnvironment</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 配置开发选项</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 配置开发工具</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupDevTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupEnvironment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 设置环境变量</span>
+    process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">=</span> <span class="token string">'development'</span>
+    process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ELECTRON_ENABLE_LOGGING</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+    process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ELECTRON_ENABLE_STACK_DUMPING</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+    
+    <span class="token comment">// 配置开发服务器</span>
+    process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">DEV_SERVER_URL</span> <span class="token operator">=</span> <span class="token string">'http://localhost:3000'</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置开发选项</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'enable-logging'</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'v'</span><span class="token punctuation">,</span> <span class="token string">'1'</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'remote-debugging-port'</span><span class="token punctuation">,</span> <span class="token string">'9222'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 禁用硬件加速</span>
+    app<span class="token punctuation">.</span><span class="token function">disableHardwareAcceleration</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupDevTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置开发工具</span>
+    app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'ready'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 打开 DevTools</span>
+      mainWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">openDevTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      
+      <span class="token comment">// 配置 DevTools 扩展</span>
+      session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">setDevToolsExtensions</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+        path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">,</span> <span class="token string">'devtron'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">,</span> <span class="token string">'vue-devtools'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="代码组织"><a href="#代码组织" class="header-anchor">#</a> 代码组织</h2> <h3 id="_1-项目结构"><a href="#_1-项目结构" class="header-anchor">#</a> 1. 项目结构</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 项目结构配置</span>
+<span class="token keyword">class</span> <span class="token class-name">ProjectStructure</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupStructure</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupStructure</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置目录结构</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>directories <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">src</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">main</span><span class="token operator">:</span> <span class="token string">'src/main'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">renderer</span><span class="token operator">:</span> <span class="token string">'src/renderer'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">shared</span><span class="token operator">:</span> <span class="token string">'src/shared'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">assets</span><span class="token operator">:</span> <span class="token string">'src/assets'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">dist</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">main</span><span class="token operator">:</span> <span class="token string">'dist/main'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">renderer</span><span class="token operator">:</span> <span class="token string">'dist/renderer'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">assets</span><span class="token operator">:</span> <span class="token string">'dist/assets'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">unit</span><span class="token operator">:</span> <span class="token string">'test/unit'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">integration</span><span class="token operator">:</span> <span class="token string">'test/integration'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">e2e</span><span class="token operator">:</span> <span class="token string">'test/e2e'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 配置文件结构</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>files <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">main</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">index</span><span class="token operator">:</span> <span class="token string">'src/main/index.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">ipc</span><span class="token operator">:</span> <span class="token string">'src/main/ipc.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">window</span><span class="token operator">:</span> <span class="token string">'src/main/window.js'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">renderer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">index</span><span class="token operator">:</span> <span class="token string">'src/renderer/index.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token string">'src/renderer/components'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">store</span><span class="token operator">:</span> <span class="token string">'src/renderer/store'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">shared</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">constants</span><span class="token operator">:</span> <span class="token string">'src/shared/constants.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">utils</span><span class="token operator">:</span> <span class="token string">'src/shared/utils.js'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 创建目录结构</span>
+  <span class="token function">createStructure</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 创建目录</span>
+    Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>directories<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">dir</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">path</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        fs<span class="token punctuation">.</span><span class="token function">mkdirSync</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">recursive</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 创建文件</span>
+    Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>files<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">file</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">path</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> path <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-模块组织"><a href="#_2-模块组织" class="header-anchor">#</a> 2. 模块组织</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 模块组织配置</span>
+<span class="token keyword">class</span> <span class="token class-name">ModuleOrganization</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupModules</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupModules</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置主进程模块</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>mainModules <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">app</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'app'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'src/main/app.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'window'</span><span class="token punctuation">,</span> <span class="token string">'ipc'</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">window</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'window'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'src/main/window.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'ipc'</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">ipc</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'ipc'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'src/main/ipc.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 配置渲染进程模块</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>rendererModules <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">app</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'app'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'src/renderer/app.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'store'</span><span class="token punctuation">,</span> <span class="token string">'router'</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">store</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'store'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'src/renderer/store.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">router</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'router'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'src/renderer/router.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 配置共享模块</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>sharedModules <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">constants</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'constants'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'src/shared/constants.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">utils</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'utils'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'src/shared/utils.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">dependencies</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 加载模块</span>
+  <span class="token function">loadModules</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 加载主进程模块</span>
+    Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>mainModules<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">module</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">require</span><span class="token punctuation">(</span>module<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 加载渲染进程模块</span>
+    Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>rendererModules<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">module</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">require</span><span class="token punctuation">(</span>module<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 加载共享模块</span>
+    Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>sharedModules<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">module</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">require</span><span class="token punctuation">(</span>module<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="开发流程"><a href="#开发流程" class="header-anchor">#</a> 开发流程</h2> <h3 id="_1-开发工作流"><a href="#_1-开发工作流" class="header-anchor">#</a> 1. 开发工作流</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 开发工作流配置</span>
+<span class="token keyword">class</span> <span class="token class-name">DevelopmentWorkflow</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupWorkflow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupWorkflow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置开发流程</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>workflow <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 开发阶段</span>
+      <span class="token literal-property property">development</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">start</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startDevelopment<span class="token punctuation">,</span>
+        <span class="token literal-property property">build</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>buildDevelopment<span class="token punctuation">,</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>testDevelopment
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token comment">// 测试阶段</span>
+      <span class="token literal-property property">testing</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">start</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startTesting<span class="token punctuation">,</span>
+        <span class="token literal-property property">build</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>buildTesting<span class="token punctuation">,</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>testTesting
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token comment">// 生产阶段</span>
+      <span class="token literal-property property">production</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">start</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>startProduction<span class="token punctuation">,</span>
+        <span class="token literal-property property">build</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>buildProduction<span class="token punctuation">,</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>testProduction
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 开发阶段</span>
+  <span class="token keyword">async</span> <span class="token function">startDevelopment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 启动开发服务器</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 启动主进程</span>
+    <span class="token keyword">const</span> main <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'electron'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'.'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>process<span class="token punctuation">.</span>env<span class="token punctuation">,</span> <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'development'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 启动渲染进程</span>
+    <span class="token keyword">const</span> renderer <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'npm'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'run'</span><span class="token punctuation">,</span> <span class="token string">'dev:renderer'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>process<span class="token punctuation">.</span>env<span class="token punctuation">,</span> <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'development'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 监听输出</span>
+    main<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Main: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    renderer<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Renderer: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">buildDevelopment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 构建开发版本</span>
+    <span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./webpack.config'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">webpack</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> stats</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+          <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">testDevelopment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 运行开发测试</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> test <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'npm'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'run'</span><span class="token punctuation">,</span> <span class="token string">'test:dev'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>process<span class="token punctuation">.</span>env<span class="token punctuation">,</span> <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'development'</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Test: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">code</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Test failed with code </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 测试阶段</span>
+  <span class="token keyword">async</span> <span class="token function">startTesting</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 启动测试环境</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 启动主进程</span>
+    <span class="token keyword">const</span> main <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'electron'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'.'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>process<span class="token punctuation">.</span>env<span class="token punctuation">,</span> <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'testing'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 启动渲染进程</span>
+    <span class="token keyword">const</span> renderer <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'npm'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'run'</span><span class="token punctuation">,</span> <span class="token string">'dev:renderer'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>process<span class="token punctuation">.</span>env<span class="token punctuation">,</span> <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'testing'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 监听输出</span>
+    main<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Main: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    renderer<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Renderer: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">buildTesting</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 构建测试版本</span>
+    <span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./webpack.config'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">webpack</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> stats</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+          <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">testTesting</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 运行测试</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> test <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'npm'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'run'</span><span class="token punctuation">,</span> <span class="token string">'test'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>process<span class="token punctuation">.</span>env<span class="token punctuation">,</span> <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'testing'</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Test: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">code</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Test failed with code </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 生产阶段</span>
+  <span class="token keyword">async</span> <span class="token function">startProduction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 启动生产环境</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 启动主进程</span>
+    <span class="token keyword">const</span> main <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'electron'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'.'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>process<span class="token punctuation">.</span>env<span class="token punctuation">,</span> <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'production'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 监听输出</span>
+    main<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Main: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">buildProduction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 构建生产版本</span>
+    <span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./webpack.config'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">webpack</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> stats</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+          <span class="token keyword">return</span>
+        <span class="token punctuation">}</span>
+        
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">testProduction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 运行生产测试</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> test <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'npm'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'run'</span><span class="token punctuation">,</span> <span class="token string">'test:prod'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">env</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span>process<span class="token punctuation">.</span>env<span class="token punctuation">,</span> <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token string">'production'</span> <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Test: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">code</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Test failed with code </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-测试策略"><a href="#_2-测试策略" class="header-anchor">#</a> 2. 测试策略</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 测试策略配置</span>
+<span class="token keyword">class</span> <span class="token class-name">TestingStrategy</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupStrategy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupStrategy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置测试策略</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>strategy <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 单元测试</span>
+      <span class="token literal-property property">unit</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">framework</span><span class="token operator">:</span> <span class="token string">'jest'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token string">'jest.config.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">pattern</span><span class="token operator">:</span> <span class="token string">'**/*.test.js'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token comment">// 集成测试</span>
+      <span class="token literal-property property">integration</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">framework</span><span class="token operator">:</span> <span class="token string">'mocha'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token string">'mocha.config.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">pattern</span><span class="token operator">:</span> <span class="token string">'**/*.spec.js'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token comment">// 端到端测试</span>
+      <span class="token literal-property property">e2e</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">framework</span><span class="token operator">:</span> <span class="token string">'spectron'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token string">'spectron.config.js'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">pattern</span><span class="token operator">:</span> <span class="token string">'**/*.e2e.js'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 运行单元测试</span>
+  <span class="token keyword">async</span> <span class="token function">runUnitTests</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> test <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'jest'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+        <span class="token string">'--config'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>strategy<span class="token punctuation">.</span>unit<span class="token punctuation">.</span>config<span class="token punctuation">,</span>
+        <span class="token string">'--testMatch'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>strategy<span class="token punctuation">.</span>unit<span class="token punctuation">.</span>pattern
+      <span class="token punctuation">]</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Unit Test: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">code</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Unit tests failed with code </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 运行集成测试</span>
+  <span class="token keyword">async</span> <span class="token function">runIntegrationTests</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> test <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'mocha'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+        <span class="token string">'--config'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>strategy<span class="token punctuation">.</span>integration<span class="token punctuation">.</span>config<span class="token punctuation">,</span>
+        <span class="token string">'--pattern'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>strategy<span class="token punctuation">.</span>integration<span class="token punctuation">.</span>pattern
+      <span class="token punctuation">]</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Integration Test: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">code</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Integration tests failed with code </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 运行端到端测试</span>
+  <span class="token keyword">async</span> <span class="token function">runE2ETests</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> spawn <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'child_process'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> test <span class="token operator">=</span> <span class="token function">spawn</span><span class="token punctuation">(</span><span class="token string">'spectron'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+        <span class="token string">'--config'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>strategy<span class="token punctuation">.</span>e2e<span class="token punctuation">.</span>config<span class="token punctuation">,</span>
+        <span class="token string">'--pattern'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>strategy<span class="token punctuation">.</span>e2e<span class="token punctuation">.</span>pattern
+      <span class="token punctuation">]</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">E2E Test: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      
+      test<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">code</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>code <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">E2E tests failed with code </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="调试技巧"><a href="#调试技巧" class="header-anchor">#</a> 调试技巧</h2> <h3 id="_1-调试工具"><a href="#_1-调试工具" class="header-anchor">#</a> 1. 调试工具</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 调试工具配置</span>
+<span class="token keyword">class</span> <span class="token class-name">DebuggingTools</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置调试工具</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tools <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 主进程调试</span>
+      <span class="token literal-property property">main</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">9222</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">protocol</span><span class="token operator">:</span> <span class="token string">'ws'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token comment">// 渲染进程调试</span>
+      <span class="token literal-property property">renderer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">9223</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">protocol</span><span class="token operator">:</span> <span class="token string">'ws'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token comment">// GPU 进程调试</span>
+      <span class="token literal-property property">gpu</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">9224</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">protocol</span><span class="token operator">:</span> <span class="token string">'ws'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 启动调试</span>
+  <span class="token function">startDebugging</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 启动主进程调试</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'remote-debugging-port'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>main<span class="token punctuation">.</span>port<span class="token punctuation">)</span>
+    
+    <span class="token comment">// 启动渲染进程调试</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'remote-debugging-port'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>renderer<span class="token punctuation">.</span>port<span class="token punctuation">)</span>
+    
+    <span class="token comment">// 启动 GPU 进程调试</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'remote-debugging-port'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>gpu<span class="token punctuation">.</span>port<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 连接调试器</span>
+  <span class="token function">connectDebugger</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 连接主进程调试器</span>
+    <span class="token keyword">const</span> mainDebugger <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocket</span><span class="token punctuation">(</span>
+      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>main<span class="token punctuation">.</span>protocol<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>main<span class="token punctuation">.</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>main<span class="token punctuation">.</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">)</span>
+    
+    <span class="token comment">// 连接渲染进程调试器</span>
+    <span class="token keyword">const</span> rendererDebugger <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocket</span><span class="token punctuation">(</span>
+      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>renderer<span class="token punctuation">.</span>protocol<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>renderer<span class="token punctuation">.</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>renderer<span class="token punctuation">.</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">)</span>
+    
+    <span class="token comment">// 连接 GPU 进程调试器</span>
+    <span class="token keyword">const</span> gpuDebugger <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocket</span><span class="token punctuation">(</span>
+      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>gpu<span class="token punctuation">.</span>protocol<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">://</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>gpu<span class="token punctuation">.</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>tools<span class="token punctuation">.</span>gpu<span class="token punctuation">.</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+    <span class="token punctuation">)</span>
+    
+    <span class="token comment">// 监听调试事件</span>
+    mainDebugger<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Main Debugger:'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    rendererDebugger<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Renderer Debugger:'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    gpuDebugger<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'GPU Debugger:'</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-调试技巧"><a href="#_2-调试技巧" class="header-anchor">#</a> 2. 调试技巧</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 调试技巧配置</span>
+<span class="token keyword">class</span> <span class="token class-name">DebuggingTips</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupTips</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupTips</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置调试技巧</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tips <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 主进程调试</span>
+      <span class="token literal-property property">main</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 启用详细日志</span>
+        <span class="token function-variable function">enableVerboseLogging</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ELECTRON_ENABLE_LOGGING</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+          process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ELECTRON_ENABLE_STACK_DUMPING</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 启用崩溃报告</span>
+        <span class="token function-variable function">enableCrashReports</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          crashReporter<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">productName</span><span class="token operator">:</span> <span class="token string">'YourApp'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">companyName</span><span class="token operator">:</span> <span class="token string">'YourCompany'</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">submitURL</span><span class="token operator">:</span> <span class="token string">'https://your-crash-server.com/submit'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 启用性能监控</span>
+        <span class="token function-variable function">enablePerformanceMonitoring</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> <span class="token punctuation">{</span> performance <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'perf_hooks'</span><span class="token punctuation">)</span>
+          
+          <span class="token comment">// 监控 CPU 使用率</span>
+          <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> usage <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">cpuUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'CPU Usage:'</span><span class="token punctuation">,</span> usage<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+          
+          <span class="token comment">// 监控内存使用</span>
+          <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> memory <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">memoryUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Memory Usage:'</span><span class="token punctuation">,</span> memory<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token comment">// 渲染进程调试</span>
+      <span class="token literal-property property">renderer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 启用 DevTools</span>
+        <span class="token function-variable function">enableDevTools</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          mainWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">openDevTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 启用控制台日志</span>
+        <span class="token function-variable function">enableConsoleLogging</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          mainWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'console-message'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> level<span class="token punctuation">,</span> message</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Renderer Console [</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>level<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">]:</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> message<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 启用网络监控</span>
+        <span class="token function-variable function">enableNetworkMonitoring</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          mainWindow<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span>session<span class="token punctuation">.</span>webRequest<span class="token punctuation">.</span><span class="token function">onCompleted</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">details</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Network Request:'</span><span class="token punctuation">,</span> details<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      
+      <span class="token comment">// GPU 进程调试</span>
+      <span class="token literal-property property">gpu</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 启用 GPU 日志</span>
+        <span class="token function-variable function">enableGPULogging</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'enable-gpu-logging'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 启用 GPU 崩溃报告</span>
+        <span class="token function-variable function">enableGPUCrashReports</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'enable-gpu-crash-dumps'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 启用 GPU 性能监控</span>
+        <span class="token function-variable function">enableGPUPerformanceMonitoring</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'enable-gpu-benchmarking'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 应用调试技巧</span>
+  <span class="token function">applyTips</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 应用主进程调试技巧</span>
+    Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>tips<span class="token punctuation">.</span>main<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">tip</span> <span class="token operator">=&gt;</span> <span class="token function">tip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 应用渲染进程调试技巧</span>
+    Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>tips<span class="token punctuation">.</span>renderer<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">tip</span> <span class="token operator">=&gt;</span> <span class="token function">tip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 应用 GPU 进程调试技巧</span>
+    Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>tips<span class="token punctuation">.</span>gpu<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">tip</span> <span class="token operator">=&gt;</span> <span class="token function">tip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="相关资源"><a href="#相关资源" class="header-anchor">#</a> 相关资源</h2> <ul><li><a href="https://www.electronjs.org/docs/tutorial/development" target="_blank" rel="noopener noreferrer">Electron 开发指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.electronjs.org/docs/tutorial/debugging" target="_blank" rel="noopener noreferrer">Electron 调试指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.electronjs.org/docs/tutorial/testing" target="_blank" rel="noopener noreferrer">Electron 测试指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.electronjs.org/docs/tutorial/build" target="_blank" rel="noopener noreferrer">Electron 构建指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/30/2025, 11:32:06 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/welcome/frontend/electron/best-practices/architecture.html" class="prev">
+        架构设计
+      </a></span> <span class="next"><a href="/welcome/frontend/electron/best-practices/security-practices.html">
+        安全实践
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/welcome/assets/js/app.c32994ef.js" defer></script><script src="/welcome/assets/js/2.f2b8224f.js" defer></script><script src="/welcome/assets/js/1.57fa854c.js" defer></script><script src="/welcome/assets/js/83.645eaf44.js" defer></script>
+  </body>
+</html>

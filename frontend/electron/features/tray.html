@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>系统托盘实现最佳实践 | 胖虎 博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="胖虎 个人技术博客">
+    
+    <link rel="preload" href="/welcome/assets/css/0.styles.6681cbdc.css" as="style"><link rel="preload" href="/welcome/assets/js/app.c32994ef.js" as="script"><link rel="preload" href="/welcome/assets/js/2.f2b8224f.js" as="script"><link rel="preload" href="/welcome/assets/js/1.57fa854c.js" as="script"><link rel="preload" href="/welcome/assets/js/96.ca2eba35.js" as="script"><link rel="prefetch" href="/welcome/assets/js/10.f277d560.js"><link rel="prefetch" href="/welcome/assets/js/100.c27f1faa.js"><link rel="prefetch" href="/welcome/assets/js/101.f3ff0c58.js"><link rel="prefetch" href="/welcome/assets/js/102.305c70a3.js"><link rel="prefetch" href="/welcome/assets/js/103.a9189cf3.js"><link rel="prefetch" href="/welcome/assets/js/104.3cfd0b2a.js"><link rel="prefetch" href="/welcome/assets/js/105.366935b0.js"><link rel="prefetch" href="/welcome/assets/js/106.72755896.js"><link rel="prefetch" href="/welcome/assets/js/107.9264a915.js"><link rel="prefetch" href="/welcome/assets/js/108.04897a57.js"><link rel="prefetch" href="/welcome/assets/js/109.9b1bbde9.js"><link rel="prefetch" href="/welcome/assets/js/11.832152cf.js"><link rel="prefetch" href="/welcome/assets/js/110.d0b53b92.js"><link rel="prefetch" href="/welcome/assets/js/111.16187ada.js"><link rel="prefetch" href="/welcome/assets/js/112.82d66908.js"><link rel="prefetch" href="/welcome/assets/js/113.4ad88615.js"><link rel="prefetch" href="/welcome/assets/js/114.1ba84168.js"><link rel="prefetch" href="/welcome/assets/js/115.1b98eac3.js"><link rel="prefetch" href="/welcome/assets/js/116.dd8c6b70.js"><link rel="prefetch" href="/welcome/assets/js/117.998f62b7.js"><link rel="prefetch" href="/welcome/assets/js/118.01487f42.js"><link rel="prefetch" href="/welcome/assets/js/119.4bfb0992.js"><link rel="prefetch" href="/welcome/assets/js/12.5bdf8e02.js"><link rel="prefetch" href="/welcome/assets/js/120.56d23f63.js"><link rel="prefetch" href="/welcome/assets/js/121.bcd040de.js"><link rel="prefetch" href="/welcome/assets/js/122.cc32a1a1.js"><link rel="prefetch" href="/welcome/assets/js/123.32c56b28.js"><link rel="prefetch" href="/welcome/assets/js/124.167f4df4.js"><link rel="prefetch" href="/welcome/assets/js/125.b78a38d2.js"><link rel="prefetch" href="/welcome/assets/js/126.360548ab.js"><link rel="prefetch" href="/welcome/assets/js/127.419dff18.js"><link rel="prefetch" href="/welcome/assets/js/128.49a6a318.js"><link rel="prefetch" href="/welcome/assets/js/129.c55a9d84.js"><link rel="prefetch" href="/welcome/assets/js/13.09410521.js"><link rel="prefetch" href="/welcome/assets/js/130.eb1db333.js"><link rel="prefetch" href="/welcome/assets/js/131.2cd64bf0.js"><link rel="prefetch" href="/welcome/assets/js/132.d5b75152.js"><link rel="prefetch" href="/welcome/assets/js/133.8d59483a.js"><link rel="prefetch" href="/welcome/assets/js/134.8cc85965.js"><link rel="prefetch" href="/welcome/assets/js/135.0abc953b.js"><link rel="prefetch" href="/welcome/assets/js/136.67e9c61c.js"><link rel="prefetch" href="/welcome/assets/js/137.41707e0b.js"><link rel="prefetch" href="/welcome/assets/js/138.9d29afb9.js"><link rel="prefetch" href="/welcome/assets/js/139.da6e5c56.js"><link rel="prefetch" href="/welcome/assets/js/14.1f0cfc71.js"><link rel="prefetch" href="/welcome/assets/js/140.1899779f.js"><link rel="prefetch" href="/welcome/assets/js/141.c9aaed65.js"><link rel="prefetch" href="/welcome/assets/js/142.18c866cf.js"><link rel="prefetch" href="/welcome/assets/js/143.0f7ccf13.js"><link rel="prefetch" href="/welcome/assets/js/144.a5a2b55a.js"><link rel="prefetch" href="/welcome/assets/js/145.8bbc9190.js"><link rel="prefetch" href="/welcome/assets/js/146.7309e37e.js"><link rel="prefetch" href="/welcome/assets/js/147.a8c9f9ad.js"><link rel="prefetch" href="/welcome/assets/js/148.7d0e175a.js"><link rel="prefetch" href="/welcome/assets/js/149.aab12723.js"><link rel="prefetch" href="/welcome/assets/js/15.5b0c6b3a.js"><link rel="prefetch" href="/welcome/assets/js/150.b64ccd41.js"><link rel="prefetch" href="/welcome/assets/js/151.1bbaed8b.js"><link rel="prefetch" href="/welcome/assets/js/152.b4d8a81d.js"><link rel="prefetch" href="/welcome/assets/js/153.e35fe96b.js"><link rel="prefetch" href="/welcome/assets/js/154.7e495f1f.js"><link rel="prefetch" href="/welcome/assets/js/155.412f572c.js"><link rel="prefetch" href="/welcome/assets/js/156.05da829b.js"><link rel="prefetch" href="/welcome/assets/js/157.f0017167.js"><link rel="prefetch" href="/welcome/assets/js/158.379c686b.js"><link rel="prefetch" href="/welcome/assets/js/159.212511b0.js"><link rel="prefetch" href="/welcome/assets/js/16.83686824.js"><link rel="prefetch" href="/welcome/assets/js/160.4f8d51d7.js"><link rel="prefetch" href="/welcome/assets/js/161.540f5619.js"><link rel="prefetch" href="/welcome/assets/js/162.55d92a94.js"><link rel="prefetch" href="/welcome/assets/js/163.6ba0970a.js"><link rel="prefetch" href="/welcome/assets/js/164.20c0b8ef.js"><link rel="prefetch" href="/welcome/assets/js/165.40bf8ac2.js"><link rel="prefetch" href="/welcome/assets/js/166.8f03a4b5.js"><link rel="prefetch" href="/welcome/assets/js/167.6a6840c1.js"><link rel="prefetch" href="/welcome/assets/js/168.2c7cd31b.js"><link rel="prefetch" href="/welcome/assets/js/169.a383195b.js"><link rel="prefetch" href="/welcome/assets/js/17.8e1a6509.js"><link rel="prefetch" href="/welcome/assets/js/170.1d1dbc0a.js"><link rel="prefetch" href="/welcome/assets/js/171.fd44818f.js"><link rel="prefetch" href="/welcome/assets/js/172.07754dc6.js"><link rel="prefetch" href="/welcome/assets/js/173.417431dd.js"><link rel="prefetch" href="/welcome/assets/js/174.95d00e82.js"><link rel="prefetch" href="/welcome/assets/js/175.9c81a19a.js"><link rel="prefetch" href="/welcome/assets/js/176.9e7649a1.js"><link rel="prefetch" href="/welcome/assets/js/177.ef0da55d.js"><link rel="prefetch" href="/welcome/assets/js/178.0e78e82e.js"><link rel="prefetch" href="/welcome/assets/js/179.46fb5d97.js"><link rel="prefetch" href="/welcome/assets/js/18.105ba92d.js"><link rel="prefetch" href="/welcome/assets/js/180.cd27f596.js"><link rel="prefetch" href="/welcome/assets/js/181.089e4a13.js"><link rel="prefetch" href="/welcome/assets/js/182.6c1bf2f4.js"><link rel="prefetch" href="/welcome/assets/js/183.993fd33c.js"><link rel="prefetch" href="/welcome/assets/js/184.f6475b67.js"><link rel="prefetch" href="/welcome/assets/js/185.7d9ab35c.js"><link rel="prefetch" href="/welcome/assets/js/186.390bedfa.js"><link rel="prefetch" href="/welcome/assets/js/187.af79cc43.js"><link rel="prefetch" href="/welcome/assets/js/188.e8beed88.js"><link rel="prefetch" href="/welcome/assets/js/189.95043c4c.js"><link rel="prefetch" href="/welcome/assets/js/19.6d3610bc.js"><link rel="prefetch" href="/welcome/assets/js/190.29dc3685.js"><link rel="prefetch" href="/welcome/assets/js/191.832619ef.js"><link rel="prefetch" href="/welcome/assets/js/192.b56215e2.js"><link rel="prefetch" href="/welcome/assets/js/193.8cb70509.js"><link rel="prefetch" href="/welcome/assets/js/194.79b483fd.js"><link rel="prefetch" href="/welcome/assets/js/195.9ed78386.js"><link rel="prefetch" href="/welcome/assets/js/196.b21e5900.js"><link rel="prefetch" href="/welcome/assets/js/197.3286c3d9.js"><link rel="prefetch" href="/welcome/assets/js/198.bef70cdc.js"><link rel="prefetch" href="/welcome/assets/js/199.1f226ffc.js"><link rel="prefetch" href="/welcome/assets/js/20.53600d06.js"><link rel="prefetch" href="/welcome/assets/js/200.13b8ca89.js"><link rel="prefetch" href="/welcome/assets/js/201.323ef3a2.js"><link rel="prefetch" href="/welcome/assets/js/202.e5a2721e.js"><link rel="prefetch" href="/welcome/assets/js/203.fde4d729.js"><link rel="prefetch" href="/welcome/assets/js/204.78f0f909.js"><link rel="prefetch" href="/welcome/assets/js/205.a5dfa221.js"><link rel="prefetch" href="/welcome/assets/js/206.701c88af.js"><link rel="prefetch" href="/welcome/assets/js/207.c2d566b7.js"><link rel="prefetch" href="/welcome/assets/js/208.91e0cadb.js"><link rel="prefetch" href="/welcome/assets/js/209.df869ce6.js"><link rel="prefetch" href="/welcome/assets/js/21.ce3bb583.js"><link rel="prefetch" href="/welcome/assets/js/210.26e6fd1c.js"><link rel="prefetch" href="/welcome/assets/js/211.f2ff073c.js"><link rel="prefetch" href="/welcome/assets/js/212.e67c8baa.js"><link rel="prefetch" href="/welcome/assets/js/213.fe9e67f8.js"><link rel="prefetch" href="/welcome/assets/js/214.c401371d.js"><link rel="prefetch" href="/welcome/assets/js/215.47325cdc.js"><link rel="prefetch" href="/welcome/assets/js/216.6223bb04.js"><link rel="prefetch" href="/welcome/assets/js/217.0f9dc548.js"><link rel="prefetch" href="/welcome/assets/js/218.24cf48c0.js"><link rel="prefetch" href="/welcome/assets/js/219.e3a81d25.js"><link rel="prefetch" href="/welcome/assets/js/22.c3d676d5.js"><link rel="prefetch" href="/welcome/assets/js/220.62614bdc.js"><link rel="prefetch" href="/welcome/assets/js/23.a2321d85.js"><link rel="prefetch" href="/welcome/assets/js/24.c6db9a0b.js"><link rel="prefetch" href="/welcome/assets/js/25.75e28bb4.js"><link rel="prefetch" href="/welcome/assets/js/26.007a7425.js"><link rel="prefetch" href="/welcome/assets/js/27.83fd4285.js"><link rel="prefetch" href="/welcome/assets/js/28.a0571a21.js"><link rel="prefetch" href="/welcome/assets/js/29.0a425eb2.js"><link rel="prefetch" href="/welcome/assets/js/3.5ce4ea28.js"><link rel="prefetch" href="/welcome/assets/js/30.30c19a85.js"><link rel="prefetch" href="/welcome/assets/js/31.8392e893.js"><link rel="prefetch" href="/welcome/assets/js/32.c8c94890.js"><link rel="prefetch" href="/welcome/assets/js/33.fbe3d1cf.js"><link rel="prefetch" href="/welcome/assets/js/34.f20a92de.js"><link rel="prefetch" href="/welcome/assets/js/35.1d1c0d4e.js"><link rel="prefetch" href="/welcome/assets/js/36.df77e06d.js"><link rel="prefetch" href="/welcome/assets/js/37.feb0698b.js"><link rel="prefetch" href="/welcome/assets/js/38.bc20b233.js"><link rel="prefetch" href="/welcome/assets/js/39.f11a62e1.js"><link rel="prefetch" href="/welcome/assets/js/4.ee0de53f.js"><link rel="prefetch" href="/welcome/assets/js/40.7d5864b0.js"><link rel="prefetch" href="/welcome/assets/js/41.868ca4ae.js"><link rel="prefetch" href="/welcome/assets/js/42.4e507119.js"><link rel="prefetch" href="/welcome/assets/js/43.5e1e6bf9.js"><link rel="prefetch" href="/welcome/assets/js/44.40f12f11.js"><link rel="prefetch" href="/welcome/assets/js/45.6ae2878e.js"><link rel="prefetch" href="/welcome/assets/js/46.a1851fdb.js"><link rel="prefetch" href="/welcome/assets/js/47.5681f4bb.js"><link rel="prefetch" href="/welcome/assets/js/48.b1388b5e.js"><link rel="prefetch" href="/welcome/assets/js/49.18a8074e.js"><link rel="prefetch" href="/welcome/assets/js/5.68a4f8c1.js"><link rel="prefetch" href="/welcome/assets/js/50.52b44674.js"><link rel="prefetch" href="/welcome/assets/js/51.6a584ab5.js"><link rel="prefetch" href="/welcome/assets/js/52.e9764135.js"><link rel="prefetch" href="/welcome/assets/js/53.d7d65635.js"><link rel="prefetch" href="/welcome/assets/js/54.05840490.js"><link rel="prefetch" href="/welcome/assets/js/55.40b5dcf5.js"><link rel="prefetch" href="/welcome/assets/js/56.23ae9fdf.js"><link rel="prefetch" href="/welcome/assets/js/57.a0a8380a.js"><link rel="prefetch" href="/welcome/assets/js/58.fa0da397.js"><link rel="prefetch" href="/welcome/assets/js/59.757bc139.js"><link rel="prefetch" href="/welcome/assets/js/6.f20b43ab.js"><link rel="prefetch" href="/welcome/assets/js/60.e1d3cce6.js"><link rel="prefetch" href="/welcome/assets/js/61.14827680.js"><link rel="prefetch" href="/welcome/assets/js/62.462365fc.js"><link rel="prefetch" href="/welcome/assets/js/63.c4ba5928.js"><link rel="prefetch" href="/welcome/assets/js/64.e47b13c6.js"><link rel="prefetch" href="/welcome/assets/js/65.619b241e.js"><link rel="prefetch" href="/welcome/assets/js/66.5605e9bb.js"><link rel="prefetch" href="/welcome/assets/js/67.36d82e21.js"><link rel="prefetch" href="/welcome/assets/js/68.3219d211.js"><link rel="prefetch" href="/welcome/assets/js/69.184f8604.js"><link rel="prefetch" href="/welcome/assets/js/7.67164775.js"><link rel="prefetch" href="/welcome/assets/js/70.9e8ec77f.js"><link rel="prefetch" href="/welcome/assets/js/71.078ebb9c.js"><link rel="prefetch" href="/welcome/assets/js/72.5e56f6a5.js"><link rel="prefetch" href="/welcome/assets/js/73.66dfe7fa.js"><link rel="prefetch" href="/welcome/assets/js/74.35996075.js"><link rel="prefetch" href="/welcome/assets/js/75.b0440e84.js"><link rel="prefetch" href="/welcome/assets/js/76.fec4ba81.js"><link rel="prefetch" href="/welcome/assets/js/77.692405ee.js"><link rel="prefetch" href="/welcome/assets/js/78.726de00a.js"><link rel="prefetch" href="/welcome/assets/js/79.95104600.js"><link rel="prefetch" href="/welcome/assets/js/80.3badf199.js"><link rel="prefetch" href="/welcome/assets/js/81.9a549ea0.js"><link rel="prefetch" href="/welcome/assets/js/82.45900f4c.js"><link rel="prefetch" href="/welcome/assets/js/83.645eaf44.js"><link rel="prefetch" href="/welcome/assets/js/84.b464576e.js"><link rel="prefetch" href="/welcome/assets/js/85.c6c6f214.js"><link rel="prefetch" href="/welcome/assets/js/86.1af0833e.js"><link rel="prefetch" href="/welcome/assets/js/87.192e3aae.js"><link rel="prefetch" href="/welcome/assets/js/88.e1f4ffc0.js"><link rel="prefetch" href="/welcome/assets/js/89.e048723c.js"><link rel="prefetch" href="/welcome/assets/js/90.0a44aeb2.js"><link rel="prefetch" href="/welcome/assets/js/91.176a1f8d.js"><link rel="prefetch" href="/welcome/assets/js/92.2869b4bb.js"><link rel="prefetch" href="/welcome/assets/js/93.8063abd7.js"><link rel="prefetch" href="/welcome/assets/js/94.6e4a61ae.js"><link rel="prefetch" href="/welcome/assets/js/95.9a361852.js"><link rel="prefetch" href="/welcome/assets/js/97.0f6af1c7.js"><link rel="prefetch" href="/welcome/assets/js/98.7d3094c4.js"><link rel="prefetch" href="/welcome/assets/js/99.3f98922d.js"><link rel="prefetch" href="/welcome/assets/js/vendors~docsearch.34c2b646.js">
+    <link rel="stylesheet" href="/welcome/assets/css/0.styles.6681cbdc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/welcome/" class="home-link router-link-active"><!----> <span class="site-name">胖虎 博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/welcome/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/jquery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/weixin/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/electron/" class="nav-link router-link-active">
+  Electron
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/node/" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="UI" class="dropdown-title"><span class="title">UI</span> <span class="arrow down"></span></button> <button type="button" aria-label="UI" class="mobile-dropdown-title"><span class="title">UI</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/ui/" class="nav-link">
+  设计规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于我" class="dropdown-title"><span class="title">关于我</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于我" class="mobile-dropdown-title"><span class="title">关于我</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/fzx19980425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/fzx0425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/1900382830734376" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/welcome/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/jquery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/weixin/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/electron/" class="nav-link router-link-active">
+  Electron
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/node/" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="UI" class="dropdown-title"><span class="title">UI</span> <span class="arrow down"></span></button> <button type="button" aria-label="UI" class="mobile-dropdown-title"><span class="title">UI</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/ui/" class="nav-link">
+  设计规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于我" class="dropdown-title"><span class="title">关于我</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于我" class="mobile-dropdown-title"><span class="title">关于我</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/fzx19980425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/fzx0425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/1900382830734376" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础入门</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>核心功能</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/welcome/frontend/electron/features/tray.html" aria-current="page" class="active sidebar-link">系统托盘</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/features/tray.html#_1-基础系统托盘实现" class="sidebar-link">1. 基础系统托盘实现</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/features/tray.html#_2-高级托盘功能" class="sidebar-link">2. 高级托盘功能</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/features/tray.html#_3-最佳实践总结" class="sidebar-link">3. 最佳实践总结</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/features/tray.html#_4-常见问题解决方案" class="sidebar-link">4. 常见问题解决方案</a></li></ul></li><li><a href="/welcome/frontend/electron/features/menu.html" class="sidebar-link">菜单</a></li><li><a href="/welcome/frontend/electron/features/dialog.html" class="sidebar-link">对话框</a></li><li><a href="/welcome/frontend/electron/features/notification.html" class="sidebar-link">通知</a></li><li><a href="/welcome/frontend/electron/features/shortcut.html" class="sidebar-link">快捷键</a></li><li><a href="/welcome/frontend/electron/features/clipboard.html" class="sidebar-link">剪贴板</a></li><li><a href="/welcome/frontend/electron/features/file-system.html" class="sidebar-link">文件系统</a></li><li><a href="/welcome/frontend/electron/features/network.html" class="sidebar-link">网络请求</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶主题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>实战案例</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>最佳实践</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="系统托盘实现最佳实践"><a href="#系统托盘实现最佳实践" class="header-anchor">#</a> 系统托盘实现最佳实践</h1> <h2 id="_1-基础系统托盘实现"><a href="#_1-基础系统托盘实现" class="header-anchor">#</a> 1. 基础系统托盘实现</h2> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// tray-manager.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> app<span class="token punctuation">,</span> Tray<span class="token punctuation">,</span> Menu<span class="token punctuation">,</span> BrowserWindow<span class="token punctuation">,</span> nativeImage <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'electron'</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">TrayManager</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> tray<span class="token operator">:</span> Tray <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">private</span> mainWindow<span class="token operator">:</span> BrowserWindow <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">private</span> isQuitting <span class="token operator">=</span> <span class="token boolean">false</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>mainWindow<span class="token operator">:</span> BrowserWindow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow <span class="token operator">=</span> mainWindow
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createTray</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupEventListeners</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 创建系统托盘</span>
+  <span class="token keyword">private</span> <span class="token function">createTray</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 创建托盘图标</span>
+    <span class="token keyword">const</span> icon <span class="token operator">=</span> nativeImage<span class="token punctuation">.</span><span class="token function">createFromPath</span><span class="token punctuation">(</span>
+      path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../assets/tray-icon.png'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">{</span> width<span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">16</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Tray</span><span class="token punctuation">(</span>icon<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setToolTip</span><span class="token punctuation">(</span><span class="token string">'我的应用'</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 创建托盘菜单</span>
+    <span class="token keyword">const</span> contextMenu <span class="token operator">=</span> Menu<span class="token punctuation">.</span><span class="token function">buildFromTemplate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        label<span class="token operator">:</span> <span class="token string">'显示主窗口'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">click</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">showMainWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        label<span class="token operator">:</span> <span class="token string">'暂停通知'</span><span class="token punctuation">,</span>
+        type<span class="token operator">:</span> <span class="token string">'checkbox'</span><span class="token punctuation">,</span>
+        checked<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">click</span><span class="token operator">:</span> <span class="token punctuation">(</span>menuItem<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toggleNotifications</span><span class="token punctuation">(</span>menuItem<span class="token punctuation">.</span>checked<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'separator'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        label<span class="token operator">:</span> <span class="token string">'检查更新'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">click</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">checkForUpdates</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        label<span class="token operator">:</span> <span class="token string">'设置'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">click</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">openSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'separator'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        label<span class="token operator">:</span> <span class="token string">'退出'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">click</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">quitApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setContextMenu</span><span class="token punctuation">(</span>contextMenu<span class="token punctuation">)</span>
+
+    <span class="token comment">// 点击托盘图标显示主窗口</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">showMainWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 右键点击显示菜单</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'right-click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token operator">?.</span><span class="token function">popUpContextMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 显示主窗口</span>
+  <span class="token keyword">private</span> <span class="token function">showMainWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow<span class="token punctuation">)</span> <span class="token keyword">return</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow<span class="token punctuation">.</span><span class="token function">isVisible</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow<span class="token punctuation">.</span><span class="token function">isMinimized</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow<span class="token punctuation">.</span><span class="token function">restore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 切换通知状态</span>
+  <span class="token keyword">private</span> <span class="token function">toggleNotifications</span><span class="token punctuation">(</span>enabled<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 实现通知开关逻辑</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'通知状态:'</span><span class="token punctuation">,</span> enabled <span class="token operator">?</span> <span class="token string">'开启'</span> <span class="token operator">:</span> <span class="token string">'关闭'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 检查更新</span>
+  <span class="token keyword">private</span> <span class="token function">checkForUpdates</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 实现更新检查逻辑</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'检查更新...'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 打开设置</span>
+  <span class="token keyword">private</span> <span class="token function">openSettings</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 实现打开设置窗口逻辑</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'打开设置...'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 退出应用</span>
+  <span class="token keyword">private</span> <span class="token function">quitApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>isQuitting <span class="token operator">=</span> <span class="token boolean">true</span>
+    app<span class="token punctuation">.</span><span class="token function">quit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置事件监听</span>
+  <span class="token keyword">private</span> <span class="token function">setupEventListeners</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 监听窗口关闭事件</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow<span class="token operator">?.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'close'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>isQuitting<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>mainWindow<span class="token operator">?.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 监听应用退出事件</span>
+    app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'before-quit'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>isQuitting <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token operator">?.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新托盘图标</span>
+  <span class="token function">updateTrayIcon</span><span class="token punctuation">(</span>iconPath<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> icon <span class="token operator">=</span> nativeImage<span class="token punctuation">.</span><span class="token function">createFromPath</span><span class="token punctuation">(</span>iconPath<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">{</span> width<span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">16</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token operator">?.</span><span class="token function">setImage</span><span class="token punctuation">(</span>icon<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新托盘提示文本</span>
+  <span class="token function">updateTooltip</span><span class="token punctuation">(</span>tooltip<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token operator">?.</span><span class="token function">setToolTip</span><span class="token punctuation">(</span>tooltip<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新托盘菜单</span>
+  <span class="token function">updateMenu</span><span class="token punctuation">(</span>menuTemplate<span class="token operator">:</span> Electron<span class="token punctuation">.</span>MenuItemConstructorOptions<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> menu <span class="token operator">=</span> Menu<span class="token punctuation">.</span><span class="token function">buildFromTemplate</span><span class="token punctuation">(</span>menuTemplate<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token operator">?.</span><span class="token function">setContextMenu</span><span class="token punctuation">(</span>menu<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 销毁托盘</span>
+  <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token operator">?.</span><span class="token function">destroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 使用示例</span>
+<span class="token comment">// main.ts</span>
+app<span class="token punctuation">.</span><span class="token function">whenReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> mainWindow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BrowserWindow</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// ... 窗口配置</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> trayManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TrayManager</span><span class="token punctuation">(</span>mainWindow<span class="token punctuation">)</span>
+
+  <span class="token comment">// 更新托盘状态示例</span>
+  <span class="token keyword">function</span> <span class="token function">updateTrayStatus</span><span class="token punctuation">(</span>status<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    trayManager<span class="token punctuation">.</span><span class="token function">updateTooltip</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">应用状态: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>status<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新托盘图标示例</span>
+  <span class="token keyword">function</span> <span class="token function">updateTrayIcon</span><span class="token punctuation">(</span>status<span class="token operator">:</span> <span class="token string">'normal'</span> <span class="token operator">|</span> <span class="token string">'warning'</span> <span class="token operator">|</span> <span class="token string">'error'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> iconPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">../assets/tray-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>status<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.png</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    trayManager<span class="token punctuation">.</span><span class="token function">updateTrayIcon</span><span class="token punctuation">(</span>iconPath<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="_2-高级托盘功能"><a href="#_2-高级托盘功能" class="header-anchor">#</a> 2. 高级托盘功能</h2> <h3 id="_2-1-动态菜单"><a href="#_2-1-动态菜单" class="header-anchor">#</a> 2.1 动态菜单</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// dynamic-menu.ts</span>
+<span class="token keyword">class</span> <span class="token class-name">DynamicTrayMenu</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> tray<span class="token operator">:</span> Tray
+  <span class="token keyword">private</span> menuItems<span class="token operator">:</span> Map<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> Electron<span class="token punctuation">.</span>MenuItem<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>tray<span class="token operator">:</span> Tray<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray <span class="token operator">=</span> tray
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 添加动态菜单项</span>
+  <span class="token function">addMenuItem</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> options<span class="token operator">:</span> Electron<span class="token punctuation">.</span>MenuItemConstructorOptions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> menuItem <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MenuItem</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>menuItems<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span> menuItem<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新菜单项</span>
+  <span class="token function">updateMenuItem</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> options<span class="token operator">:</span> Partial<span class="token operator">&lt;</span>Electron<span class="token punctuation">.</span>MenuItemConstructorOptions<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> menuItem <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>menuItems<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>menuItem<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>menuItem<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 移除菜单项</span>
+  <span class="token function">removeMenuItem</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>menuItems<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新整个菜单</span>
+  <span class="token keyword">private</span> <span class="token function">updateMenu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> menu <span class="token operator">=</span> Menu<span class="token punctuation">.</span><span class="token function">buildFromTemplate</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+      <span class="token operator">...</span><span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>menuItems<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'separator'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'退出'</span><span class="token punctuation">,</span> role<span class="token operator">:</span> <span class="token string">'quit'</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setContextMenu</span><span class="token punctuation">(</span>menu<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-2-托盘通知"><a href="#_2-2-托盘通知" class="header-anchor">#</a> 2.2 托盘通知</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// tray-notification.ts</span>
+<span class="token keyword">class</span> <span class="token class-name">TrayNotification</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> tray<span class="token operator">:</span> Tray
+  <span class="token keyword">private</span> notificationTimeout<span class="token operator">:</span> NodeJS<span class="token punctuation">.</span>Timeout <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>tray<span class="token operator">:</span> Tray<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray <span class="token operator">=</span> tray
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 显示临时通知</span>
+  <span class="token function">showNotification</span><span class="token punctuation">(</span>message<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> duration<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">3000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 清除之前的通知</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">clearNotification</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 保存原始提示文本</span>
+    <span class="token keyword">const</span> originalTooltip <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">getToolTip</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 显示新通知</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setToolTip</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+    <span class="token comment">// 设置定时器恢复原始提示</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>notificationTimeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setToolTip</span><span class="token punctuation">(</span>originalTooltip<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>notificationTimeout <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> duration<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 清除通知</span>
+  <span class="token function">clearNotification</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>notificationTimeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>notificationTimeout<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>notificationTimeout <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_2-3-托盘状态管理"><a href="#_2-3-托盘状态管理" class="header-anchor">#</a> 2.3 托盘状态管理</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// tray-state.ts</span>
+<span class="token keyword">interface</span> <span class="token class-name">TrayState</span> <span class="token punctuation">{</span>
+  icon<span class="token operator">:</span> <span class="token builtin">string</span>
+  tooltip<span class="token operator">:</span> <span class="token builtin">string</span>
+  menu<span class="token operator">:</span> Electron<span class="token punctuation">.</span>MenuItemConstructorOptions<span class="token punctuation">[</span><span class="token punctuation">]</span>
+  isVisible<span class="token operator">:</span> <span class="token builtin">boolean</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TrayStateManager</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> tray<span class="token operator">:</span> Tray
+  <span class="token keyword">private</span> state<span class="token operator">:</span> TrayState
+  <span class="token keyword">private</span> stateHistory<span class="token operator">:</span> TrayState<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>tray<span class="token operator">:</span> Tray<span class="token punctuation">,</span> initialState<span class="token operator">:</span> TrayState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray <span class="token operator">=</span> tray
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> initialState
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">applyState</span><span class="token punctuation">(</span>initialState<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 更新托盘状态</span>
+  <span class="token function">updateState</span><span class="token punctuation">(</span>newState<span class="token operator">:</span> Partial<span class="token operator">&lt;</span>TrayState<span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 保存当前状态到历史记录</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>stateHistory<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 更新状态</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">,</span> <span class="token operator">...</span>newState <span class="token punctuation">}</span>
+
+    <span class="token comment">// 应用新状态</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">applyState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 应用状态</span>
+  <span class="token keyword">private</span> <span class="token function">applyState</span><span class="token punctuation">(</span>state<span class="token operator">:</span> TrayState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">.</span>icon<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> icon <span class="token operator">=</span> nativeImage<span class="token punctuation">.</span><span class="token function">createFromPath</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>icon<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">{</span> width<span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">16</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setImage</span><span class="token punctuation">(</span>icon<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">.</span>tooltip<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setToolTip</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>tooltip<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">.</span>menu<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> menu <span class="token operator">=</span> Menu<span class="token punctuation">.</span><span class="token function">buildFromTemplate</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>menu<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setContextMenu</span><span class="token punctuation">(</span>menu<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">.</span>isVisible <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setVisible</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>isVisible<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 恢复上一个状态</span>
+  <span class="token function">restorePreviousState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> previousState <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>stateHistory<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>previousState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> previousState
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">applyState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="_3-最佳实践总结"><a href="#_3-最佳实践总结" class="header-anchor">#</a> 3. 最佳实践总结</h2> <h3 id="_3-1-性能优化"><a href="#_3-1-性能优化" class="header-anchor">#</a> 3.1 性能优化</h3> <ol><li>使用适当大小的图标（16x16 或 32x32）</li> <li>避免频繁更新托盘状态</li> <li>使用缓存减少图标加载</li> <li>优化菜单更新逻辑</li> <li>及时清理资源</li></ol> <h3 id="_3-2-用户体验"><a href="#_3-2-用户体验" class="header-anchor">#</a> 3.2 用户体验</h3> <ol><li>提供清晰的图标和提示文本</li> <li>实现合理的菜单结构</li> <li>支持快捷键操作</li> <li>提供状态反馈</li> <li>保持行为一致性</li></ol> <h3 id="_3-3-错误处理"><a href="#_3-3-错误处理" class="header-anchor">#</a> 3.3 错误处理</h3> <ol><li>处理图标加载失败</li> <li>验证菜单项配置</li> <li>处理窗口状态异常</li> <li>实现优雅的退出逻辑</li> <li>添加错误日志</li></ol> <h3 id="_3-4-安全性"><a href="#_3-4-安全性" class="header-anchor">#</a> 3.4 安全性</h3> <ol><li>验证菜单项权限</li> <li>限制托盘操作范围</li> <li>保护敏感操作</li> <li>实现操作确认</li> <li>防止恶意操作</li></ol> <h3 id="_3-5-跨平台兼容"><a href="#_3-5-跨平台兼容" class="header-anchor">#</a> 3.5 跨平台兼容</h3> <ol><li>处理不同平台的图标差异</li> <li>适配不同平台的菜单行为</li> <li>处理平台特定的快捷键</li> <li>考虑不同分辨率</li> <li>测试不同操作系统</li></ol> <h2 id="_4-常见问题解决方案"><a href="#_4-常见问题解决方案" class="header-anchor">#</a> 4. 常见问题解决方案</h2> <h3 id="_4-1-托盘图标闪烁"><a href="#_4-1-托盘图标闪烁" class="header-anchor">#</a> 4.1 托盘图标闪烁</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">class</span> <span class="token class-name">TrayBlinkManager</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> blinkInterval<span class="token operator">:</span> NodeJS<span class="token punctuation">.</span>Timeout <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">private</span> originalIcon<span class="token operator">:</span> Electron<span class="token punctuation">.</span>NativeImage
+  <span class="token keyword">private</span> alternateIcon<span class="token operator">:</span> Electron<span class="token punctuation">.</span>NativeImage
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>tray<span class="token operator">:</span> Tray<span class="token punctuation">,</span> alternateIconPath<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>originalIcon <span class="token operator">=</span> tray<span class="token punctuation">.</span><span class="token function">getImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>alternateIcon <span class="token operator">=</span> nativeImage<span class="token punctuation">.</span><span class="token function">createFromPath</span><span class="token punctuation">(</span>alternateIconPath<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">{</span> width<span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">16</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">startBlinking</span><span class="token punctuation">(</span>interval<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">500</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">stopBlinking</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> isOriginal <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>blinkInterval <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setImage</span><span class="token punctuation">(</span>isOriginal <span class="token operator">?</span> <span class="token keyword">this</span><span class="token punctuation">.</span>originalIcon <span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>alternateIcon<span class="token punctuation">)</span>
+      isOriginal <span class="token operator">=</span> <span class="token operator">!</span>isOriginal
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> interval<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">stopBlinking</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>blinkInterval<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearInterval</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>blinkInterval<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>blinkInterval <span class="token operator">=</span> <span class="token keyword">null</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setImage</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>originalIcon<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_4-2-托盘菜单状态同步"><a href="#_4-2-托盘菜单状态同步" class="header-anchor">#</a> 4.2 托盘菜单状态同步</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">class</span> <span class="token class-name">TrayMenuSync</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> menuItems<span class="token operator">:</span> Map<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> 
+    item<span class="token operator">:</span> Electron<span class="token punctuation">.</span>MenuItem
+    state<span class="token operator">:</span> <span class="token builtin">any</span> 
+  <span class="token punctuation">}</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token function">updateMenuItemState</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> state<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> menuItem <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>menuItems<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>menuItem<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      menuItem<span class="token punctuation">.</span>state <span class="token operator">=</span> state
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">syncMenuItem</span><span class="token punctuation">(</span>menuItem<span class="token punctuation">.</span>item<span class="token punctuation">,</span> state<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">syncMenuItem</span><span class="token punctuation">(</span>item<span class="token operator">:</span> Electron<span class="token punctuation">.</span>MenuItem<span class="token punctuation">,</span> state<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">.</span>checked <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      item<span class="token punctuation">.</span>checked <span class="token operator">=</span> state<span class="token punctuation">.</span>checked
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">.</span>enabled <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      item<span class="token punctuation">.</span>enabled <span class="token operator">=</span> state<span class="token punctuation">.</span>enabled
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">.</span>label <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      item<span class="token punctuation">.</span>label <span class="token operator">=</span> state<span class="token punctuation">.</span>label
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="_4-3-托盘通知队列"><a href="#_4-3-托盘通知队列" class="header-anchor">#</a> 4.3 托盘通知队列</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">class</span> <span class="token class-name">TrayNotificationQueue</span> <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> queue<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">private</span> isProcessing <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token keyword">private</span> currentTimeout<span class="token operator">:</span> NodeJS<span class="token punctuation">.</span>Timeout <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token operator">=</span> <span class="token keyword">null</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> tray<span class="token operator">:</span> Tray<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  <span class="token function">addNotification</span><span class="token punctuation">(</span>message<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>isProcessing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">processNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">processNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>isProcessing <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>isProcessing <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">!</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tray<span class="token punctuation">.</span><span class="token function">setToolTip</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span>currentTimeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">processNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>currentTimeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>currentTimeout<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>isProcessing <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/30/2025, 11:32:06 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/welcome/frontend/electron/guide/security.html" class="prev">
+        安全模型
+      </a></span> <span class="next"><a href="/welcome/frontend/electron/features/menu.html">
+        菜单
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/welcome/assets/js/app.c32994ef.js" defer></script><script src="/welcome/assets/js/2.f2b8224f.js" defer></script><script src="/welcome/assets/js/1.57fa854c.js" defer></script><script src="/welcome/assets/js/96.ca2eba35.js" defer></script>
+  </body>
+</html>

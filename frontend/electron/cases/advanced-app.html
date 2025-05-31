@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Electron 高级应用案例 | 胖虎 博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="胖虎 个人技术博客">
+    
+    <link rel="preload" href="/welcome/assets/css/0.styles.6681cbdc.css" as="style"><link rel="preload" href="/welcome/assets/js/app.c32994ef.js" as="script"><link rel="preload" href="/welcome/assets/js/2.f2b8224f.js" as="script"><link rel="preload" href="/welcome/assets/js/1.57fa854c.js" as="script"><link rel="preload" href="/welcome/assets/js/86.1af0833e.js" as="script"><link rel="prefetch" href="/welcome/assets/js/10.f277d560.js"><link rel="prefetch" href="/welcome/assets/js/100.c27f1faa.js"><link rel="prefetch" href="/welcome/assets/js/101.f3ff0c58.js"><link rel="prefetch" href="/welcome/assets/js/102.305c70a3.js"><link rel="prefetch" href="/welcome/assets/js/103.a9189cf3.js"><link rel="prefetch" href="/welcome/assets/js/104.3cfd0b2a.js"><link rel="prefetch" href="/welcome/assets/js/105.366935b0.js"><link rel="prefetch" href="/welcome/assets/js/106.72755896.js"><link rel="prefetch" href="/welcome/assets/js/107.9264a915.js"><link rel="prefetch" href="/welcome/assets/js/108.04897a57.js"><link rel="prefetch" href="/welcome/assets/js/109.9b1bbde9.js"><link rel="prefetch" href="/welcome/assets/js/11.832152cf.js"><link rel="prefetch" href="/welcome/assets/js/110.d0b53b92.js"><link rel="prefetch" href="/welcome/assets/js/111.16187ada.js"><link rel="prefetch" href="/welcome/assets/js/112.82d66908.js"><link rel="prefetch" href="/welcome/assets/js/113.4ad88615.js"><link rel="prefetch" href="/welcome/assets/js/114.1ba84168.js"><link rel="prefetch" href="/welcome/assets/js/115.1b98eac3.js"><link rel="prefetch" href="/welcome/assets/js/116.dd8c6b70.js"><link rel="prefetch" href="/welcome/assets/js/117.998f62b7.js"><link rel="prefetch" href="/welcome/assets/js/118.01487f42.js"><link rel="prefetch" href="/welcome/assets/js/119.4bfb0992.js"><link rel="prefetch" href="/welcome/assets/js/12.5bdf8e02.js"><link rel="prefetch" href="/welcome/assets/js/120.56d23f63.js"><link rel="prefetch" href="/welcome/assets/js/121.bcd040de.js"><link rel="prefetch" href="/welcome/assets/js/122.cc32a1a1.js"><link rel="prefetch" href="/welcome/assets/js/123.32c56b28.js"><link rel="prefetch" href="/welcome/assets/js/124.167f4df4.js"><link rel="prefetch" href="/welcome/assets/js/125.b78a38d2.js"><link rel="prefetch" href="/welcome/assets/js/126.360548ab.js"><link rel="prefetch" href="/welcome/assets/js/127.419dff18.js"><link rel="prefetch" href="/welcome/assets/js/128.49a6a318.js"><link rel="prefetch" href="/welcome/assets/js/129.c55a9d84.js"><link rel="prefetch" href="/welcome/assets/js/13.09410521.js"><link rel="prefetch" href="/welcome/assets/js/130.eb1db333.js"><link rel="prefetch" href="/welcome/assets/js/131.2cd64bf0.js"><link rel="prefetch" href="/welcome/assets/js/132.d5b75152.js"><link rel="prefetch" href="/welcome/assets/js/133.8d59483a.js"><link rel="prefetch" href="/welcome/assets/js/134.8cc85965.js"><link rel="prefetch" href="/welcome/assets/js/135.0abc953b.js"><link rel="prefetch" href="/welcome/assets/js/136.67e9c61c.js"><link rel="prefetch" href="/welcome/assets/js/137.41707e0b.js"><link rel="prefetch" href="/welcome/assets/js/138.9d29afb9.js"><link rel="prefetch" href="/welcome/assets/js/139.da6e5c56.js"><link rel="prefetch" href="/welcome/assets/js/14.1f0cfc71.js"><link rel="prefetch" href="/welcome/assets/js/140.1899779f.js"><link rel="prefetch" href="/welcome/assets/js/141.c9aaed65.js"><link rel="prefetch" href="/welcome/assets/js/142.18c866cf.js"><link rel="prefetch" href="/welcome/assets/js/143.0f7ccf13.js"><link rel="prefetch" href="/welcome/assets/js/144.a5a2b55a.js"><link rel="prefetch" href="/welcome/assets/js/145.8bbc9190.js"><link rel="prefetch" href="/welcome/assets/js/146.7309e37e.js"><link rel="prefetch" href="/welcome/assets/js/147.a8c9f9ad.js"><link rel="prefetch" href="/welcome/assets/js/148.7d0e175a.js"><link rel="prefetch" href="/welcome/assets/js/149.aab12723.js"><link rel="prefetch" href="/welcome/assets/js/15.5b0c6b3a.js"><link rel="prefetch" href="/welcome/assets/js/150.b64ccd41.js"><link rel="prefetch" href="/welcome/assets/js/151.1bbaed8b.js"><link rel="prefetch" href="/welcome/assets/js/152.b4d8a81d.js"><link rel="prefetch" href="/welcome/assets/js/153.e35fe96b.js"><link rel="prefetch" href="/welcome/assets/js/154.7e495f1f.js"><link rel="prefetch" href="/welcome/assets/js/155.412f572c.js"><link rel="prefetch" href="/welcome/assets/js/156.05da829b.js"><link rel="prefetch" href="/welcome/assets/js/157.f0017167.js"><link rel="prefetch" href="/welcome/assets/js/158.379c686b.js"><link rel="prefetch" href="/welcome/assets/js/159.212511b0.js"><link rel="prefetch" href="/welcome/assets/js/16.83686824.js"><link rel="prefetch" href="/welcome/assets/js/160.4f8d51d7.js"><link rel="prefetch" href="/welcome/assets/js/161.540f5619.js"><link rel="prefetch" href="/welcome/assets/js/162.55d92a94.js"><link rel="prefetch" href="/welcome/assets/js/163.6ba0970a.js"><link rel="prefetch" href="/welcome/assets/js/164.20c0b8ef.js"><link rel="prefetch" href="/welcome/assets/js/165.40bf8ac2.js"><link rel="prefetch" href="/welcome/assets/js/166.8f03a4b5.js"><link rel="prefetch" href="/welcome/assets/js/167.6a6840c1.js"><link rel="prefetch" href="/welcome/assets/js/168.2c7cd31b.js"><link rel="prefetch" href="/welcome/assets/js/169.a383195b.js"><link rel="prefetch" href="/welcome/assets/js/17.8e1a6509.js"><link rel="prefetch" href="/welcome/assets/js/170.1d1dbc0a.js"><link rel="prefetch" href="/welcome/assets/js/171.fd44818f.js"><link rel="prefetch" href="/welcome/assets/js/172.07754dc6.js"><link rel="prefetch" href="/welcome/assets/js/173.417431dd.js"><link rel="prefetch" href="/welcome/assets/js/174.95d00e82.js"><link rel="prefetch" href="/welcome/assets/js/175.9c81a19a.js"><link rel="prefetch" href="/welcome/assets/js/176.9e7649a1.js"><link rel="prefetch" href="/welcome/assets/js/177.ef0da55d.js"><link rel="prefetch" href="/welcome/assets/js/178.0e78e82e.js"><link rel="prefetch" href="/welcome/assets/js/179.46fb5d97.js"><link rel="prefetch" href="/welcome/assets/js/18.105ba92d.js"><link rel="prefetch" href="/welcome/assets/js/180.cd27f596.js"><link rel="prefetch" href="/welcome/assets/js/181.089e4a13.js"><link rel="prefetch" href="/welcome/assets/js/182.6c1bf2f4.js"><link rel="prefetch" href="/welcome/assets/js/183.993fd33c.js"><link rel="prefetch" href="/welcome/assets/js/184.f6475b67.js"><link rel="prefetch" href="/welcome/assets/js/185.7d9ab35c.js"><link rel="prefetch" href="/welcome/assets/js/186.390bedfa.js"><link rel="prefetch" href="/welcome/assets/js/187.af79cc43.js"><link rel="prefetch" href="/welcome/assets/js/188.e8beed88.js"><link rel="prefetch" href="/welcome/assets/js/189.95043c4c.js"><link rel="prefetch" href="/welcome/assets/js/19.6d3610bc.js"><link rel="prefetch" href="/welcome/assets/js/190.29dc3685.js"><link rel="prefetch" href="/welcome/assets/js/191.832619ef.js"><link rel="prefetch" href="/welcome/assets/js/192.b56215e2.js"><link rel="prefetch" href="/welcome/assets/js/193.8cb70509.js"><link rel="prefetch" href="/welcome/assets/js/194.79b483fd.js"><link rel="prefetch" href="/welcome/assets/js/195.9ed78386.js"><link rel="prefetch" href="/welcome/assets/js/196.b21e5900.js"><link rel="prefetch" href="/welcome/assets/js/197.3286c3d9.js"><link rel="prefetch" href="/welcome/assets/js/198.bef70cdc.js"><link rel="prefetch" href="/welcome/assets/js/199.1f226ffc.js"><link rel="prefetch" href="/welcome/assets/js/20.53600d06.js"><link rel="prefetch" href="/welcome/assets/js/200.13b8ca89.js"><link rel="prefetch" href="/welcome/assets/js/201.323ef3a2.js"><link rel="prefetch" href="/welcome/assets/js/202.e5a2721e.js"><link rel="prefetch" href="/welcome/assets/js/203.fde4d729.js"><link rel="prefetch" href="/welcome/assets/js/204.78f0f909.js"><link rel="prefetch" href="/welcome/assets/js/205.a5dfa221.js"><link rel="prefetch" href="/welcome/assets/js/206.701c88af.js"><link rel="prefetch" href="/welcome/assets/js/207.c2d566b7.js"><link rel="prefetch" href="/welcome/assets/js/208.91e0cadb.js"><link rel="prefetch" href="/welcome/assets/js/209.df869ce6.js"><link rel="prefetch" href="/welcome/assets/js/21.ce3bb583.js"><link rel="prefetch" href="/welcome/assets/js/210.26e6fd1c.js"><link rel="prefetch" href="/welcome/assets/js/211.f2ff073c.js"><link rel="prefetch" href="/welcome/assets/js/212.e67c8baa.js"><link rel="prefetch" href="/welcome/assets/js/213.fe9e67f8.js"><link rel="prefetch" href="/welcome/assets/js/214.c401371d.js"><link rel="prefetch" href="/welcome/assets/js/215.47325cdc.js"><link rel="prefetch" href="/welcome/assets/js/216.6223bb04.js"><link rel="prefetch" href="/welcome/assets/js/217.0f9dc548.js"><link rel="prefetch" href="/welcome/assets/js/218.24cf48c0.js"><link rel="prefetch" href="/welcome/assets/js/219.e3a81d25.js"><link rel="prefetch" href="/welcome/assets/js/22.c3d676d5.js"><link rel="prefetch" href="/welcome/assets/js/220.62614bdc.js"><link rel="prefetch" href="/welcome/assets/js/23.a2321d85.js"><link rel="prefetch" href="/welcome/assets/js/24.c6db9a0b.js"><link rel="prefetch" href="/welcome/assets/js/25.75e28bb4.js"><link rel="prefetch" href="/welcome/assets/js/26.007a7425.js"><link rel="prefetch" href="/welcome/assets/js/27.83fd4285.js"><link rel="prefetch" href="/welcome/assets/js/28.a0571a21.js"><link rel="prefetch" href="/welcome/assets/js/29.0a425eb2.js"><link rel="prefetch" href="/welcome/assets/js/3.5ce4ea28.js"><link rel="prefetch" href="/welcome/assets/js/30.30c19a85.js"><link rel="prefetch" href="/welcome/assets/js/31.8392e893.js"><link rel="prefetch" href="/welcome/assets/js/32.c8c94890.js"><link rel="prefetch" href="/welcome/assets/js/33.fbe3d1cf.js"><link rel="prefetch" href="/welcome/assets/js/34.f20a92de.js"><link rel="prefetch" href="/welcome/assets/js/35.1d1c0d4e.js"><link rel="prefetch" href="/welcome/assets/js/36.df77e06d.js"><link rel="prefetch" href="/welcome/assets/js/37.feb0698b.js"><link rel="prefetch" href="/welcome/assets/js/38.bc20b233.js"><link rel="prefetch" href="/welcome/assets/js/39.f11a62e1.js"><link rel="prefetch" href="/welcome/assets/js/4.ee0de53f.js"><link rel="prefetch" href="/welcome/assets/js/40.7d5864b0.js"><link rel="prefetch" href="/welcome/assets/js/41.868ca4ae.js"><link rel="prefetch" href="/welcome/assets/js/42.4e507119.js"><link rel="prefetch" href="/welcome/assets/js/43.5e1e6bf9.js"><link rel="prefetch" href="/welcome/assets/js/44.40f12f11.js"><link rel="prefetch" href="/welcome/assets/js/45.6ae2878e.js"><link rel="prefetch" href="/welcome/assets/js/46.a1851fdb.js"><link rel="prefetch" href="/welcome/assets/js/47.5681f4bb.js"><link rel="prefetch" href="/welcome/assets/js/48.b1388b5e.js"><link rel="prefetch" href="/welcome/assets/js/49.18a8074e.js"><link rel="prefetch" href="/welcome/assets/js/5.68a4f8c1.js"><link rel="prefetch" href="/welcome/assets/js/50.52b44674.js"><link rel="prefetch" href="/welcome/assets/js/51.6a584ab5.js"><link rel="prefetch" href="/welcome/assets/js/52.e9764135.js"><link rel="prefetch" href="/welcome/assets/js/53.d7d65635.js"><link rel="prefetch" href="/welcome/assets/js/54.05840490.js"><link rel="prefetch" href="/welcome/assets/js/55.40b5dcf5.js"><link rel="prefetch" href="/welcome/assets/js/56.23ae9fdf.js"><link rel="prefetch" href="/welcome/assets/js/57.a0a8380a.js"><link rel="prefetch" href="/welcome/assets/js/58.fa0da397.js"><link rel="prefetch" href="/welcome/assets/js/59.757bc139.js"><link rel="prefetch" href="/welcome/assets/js/6.f20b43ab.js"><link rel="prefetch" href="/welcome/assets/js/60.e1d3cce6.js"><link rel="prefetch" href="/welcome/assets/js/61.14827680.js"><link rel="prefetch" href="/welcome/assets/js/62.462365fc.js"><link rel="prefetch" href="/welcome/assets/js/63.c4ba5928.js"><link rel="prefetch" href="/welcome/assets/js/64.e47b13c6.js"><link rel="prefetch" href="/welcome/assets/js/65.619b241e.js"><link rel="prefetch" href="/welcome/assets/js/66.5605e9bb.js"><link rel="prefetch" href="/welcome/assets/js/67.36d82e21.js"><link rel="prefetch" href="/welcome/assets/js/68.3219d211.js"><link rel="prefetch" href="/welcome/assets/js/69.184f8604.js"><link rel="prefetch" href="/welcome/assets/js/7.67164775.js"><link rel="prefetch" href="/welcome/assets/js/70.9e8ec77f.js"><link rel="prefetch" href="/welcome/assets/js/71.078ebb9c.js"><link rel="prefetch" href="/welcome/assets/js/72.5e56f6a5.js"><link rel="prefetch" href="/welcome/assets/js/73.66dfe7fa.js"><link rel="prefetch" href="/welcome/assets/js/74.35996075.js"><link rel="prefetch" href="/welcome/assets/js/75.b0440e84.js"><link rel="prefetch" href="/welcome/assets/js/76.fec4ba81.js"><link rel="prefetch" href="/welcome/assets/js/77.692405ee.js"><link rel="prefetch" href="/welcome/assets/js/78.726de00a.js"><link rel="prefetch" href="/welcome/assets/js/79.95104600.js"><link rel="prefetch" href="/welcome/assets/js/80.3badf199.js"><link rel="prefetch" href="/welcome/assets/js/81.9a549ea0.js"><link rel="prefetch" href="/welcome/assets/js/82.45900f4c.js"><link rel="prefetch" href="/welcome/assets/js/83.645eaf44.js"><link rel="prefetch" href="/welcome/assets/js/84.b464576e.js"><link rel="prefetch" href="/welcome/assets/js/85.c6c6f214.js"><link rel="prefetch" href="/welcome/assets/js/87.192e3aae.js"><link rel="prefetch" href="/welcome/assets/js/88.e1f4ffc0.js"><link rel="prefetch" href="/welcome/assets/js/89.e048723c.js"><link rel="prefetch" href="/welcome/assets/js/90.0a44aeb2.js"><link rel="prefetch" href="/welcome/assets/js/91.176a1f8d.js"><link rel="prefetch" href="/welcome/assets/js/92.2869b4bb.js"><link rel="prefetch" href="/welcome/assets/js/93.8063abd7.js"><link rel="prefetch" href="/welcome/assets/js/94.6e4a61ae.js"><link rel="prefetch" href="/welcome/assets/js/95.9a361852.js"><link rel="prefetch" href="/welcome/assets/js/96.ca2eba35.js"><link rel="prefetch" href="/welcome/assets/js/97.0f6af1c7.js"><link rel="prefetch" href="/welcome/assets/js/98.7d3094c4.js"><link rel="prefetch" href="/welcome/assets/js/99.3f98922d.js"><link rel="prefetch" href="/welcome/assets/js/vendors~docsearch.34c2b646.js">
+    <link rel="stylesheet" href="/welcome/assets/css/0.styles.6681cbdc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/welcome/" class="home-link router-link-active"><!----> <span class="site-name">胖虎 博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/welcome/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/jquery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/weixin/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/electron/" class="nav-link router-link-active">
+  Electron
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/node/" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="UI" class="dropdown-title"><span class="title">UI</span> <span class="arrow down"></span></button> <button type="button" aria-label="UI" class="mobile-dropdown-title"><span class="title">UI</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/ui/" class="nav-link">
+  设计规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于我" class="dropdown-title"><span class="title">关于我</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于我" class="mobile-dropdown-title"><span class="title">关于我</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/fzx19980425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/fzx0425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/1900382830734376" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/welcome/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/frontend/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/js/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/jquery/" class="nav-link">
+  jQuery
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/animation/" class="nav-link">
+  动画
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/uni-app/" class="nav-link">
+  uni-app
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/weixin/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/electron/" class="nav-link router-link-active">
+  Electron
+</a></li><li class="dropdown-item"><!----> <a href="/welcome/frontend/node/" class="nav-link">
+  Node.js
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="UI" class="dropdown-title"><span class="title">UI</span> <span class="arrow down"></span></button> <button type="button" aria-label="UI" class="mobile-dropdown-title"><span class="title">UI</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/welcome/ui/" class="nav-link">
+  设计规范
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于我" class="dropdown-title"><span class="title">关于我</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于我" class="mobile-dropdown-title"><span class="title">关于我</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://github.com/fzx19980425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/fzx0425" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/1900382830734376" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>基础入门</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>核心功能</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>进阶主题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>实战案例</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/welcome/frontend/electron/cases/basic-app.html" class="sidebar-link">基础应用开发</a></li><li><a href="/welcome/frontend/electron/cases/advanced-app.html" aria-current="page" class="active sidebar-link">进阶应用开发</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/cases/advanced-app.html#应用概述" class="sidebar-link">应用概述</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/cases/advanced-app.html#项目结构" class="sidebar-link">项目结构</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/cases/advanced-app.html#核心功能" class="sidebar-link">核心功能</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/cases/advanced-app.html#性能优化" class="sidebar-link">性能优化</a></li><li class="sidebar-sub-header"><a href="/welcome/frontend/electron/cases/advanced-app.html#相关资源" class="sidebar-link">相关资源</a></li></ul></li><li><a href="/welcome/frontend/electron/cases/enterprise-app.html" class="sidebar-link">企业级应用开发</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>最佳实践</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="electron-高级应用案例"><a href="#electron-高级应用案例" class="header-anchor">#</a> Electron 高级应用案例</h1> <h2 id="应用概述"><a href="#应用概述" class="header-anchor">#</a> 应用概述</h2> <p>这是一个高级的 Electron 应用示例，展示了如何构建一个功能丰富的桌面应用。该应用包含以下高级特性：</p> <ul><li>多窗口管理</li> <li>进程间通信</li> <li>本地数据库</li> <li>自动更新</li> <li>系统集成</li> <li>性能优化</li> <li>安全特性</li> <li>国际化支持</li></ul> <h2 id="项目结构"><a href="#项目结构" class="header-anchor">#</a> 项目结构</h2> <div class="language- extra-class"><pre class="language-text"><code>advanced-app/
+├── src/
+│   ├── main/
+│   │   ├── index.js              # 主进程入口
+│   │   ├── windows/              # 窗口管理
+│   │   │   ├── main.js           # 主窗口
+│   │   │   ├── settings.js       # 设置窗口
+│   │   │   └── about.js          # 关于窗口
+│   │   ├── services/             # 服务
+│   │   │   ├── database.js       # 数据库服务
+│   │   │   ├── updater.js        # 更新服务
+│   │   │   └── security.js       # 安全服务
+│   │   ├── ipc/                  # IPC 通信
+│   │   │   ├── handlers/         # 处理器
+│   │   │   └── events/           # 事件
+│   │   └── utils/                # 工具函数
+│   ├── renderer/
+│   │   ├── windows/              # 窗口页面
+│   │   │   ├── main/            # 主窗口
+│   │   │   ├── settings/        # 设置窗口
+│   │   │   └── about/           # 关于窗口
+│   │   ├── components/          # 组件
+│   │   │   ├── common/          # 通用组件
+│   │   │   └── specific/        # 特定组件
+│   │   ├── store/               # 状态管理
+│   │   │   ├── index.js         # 状态入口
+│   │   │   ├── modules/         # 状态模块
+│   │   │   └── plugins/         # 状态插件
+│   │   ├── i18n/                # 国际化
+│   │   │   ├── locales/         # 语言文件
+│   │   │   └── index.js         # 国际化配置
+│   │   └── styles/              # 样式
+│   │       ├── themes/          # 主题
+│   │       └── components/      # 组件样式
+│   └── shared/                  # 共享代码
+│       ├── constants/           # 常量
+│       ├── types/               # 类型定义
+│       └── utils/               # 工具函数
+├── scripts/                     # 脚本
+│   ├── build.js                 # 构建脚本
+│   ├── dev.js                   # 开发脚本
+│   └── test.js                  # 测试脚本
+├── config/                      # 配置
+│   ├── webpack/                 # Webpack 配置
+│   ├── electron-builder/        # 打包配置
+│   └── jest/                    # 测试配置
+├── package.json                 # 项目配置
+└── README.md                    # 项目说明
+</code></pre></div><h2 id="核心功能"><a href="#核心功能" class="header-anchor">#</a> 核心功能</h2> <h3 id="_1-多窗口管理"><a href="#_1-多窗口管理" class="header-anchor">#</a> 1. 多窗口管理</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/main/windows/manager.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> BrowserWindow<span class="token punctuation">,</span> screen <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">WindowManager</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>windows <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupWindowEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 创建主窗口</span>
+  <span class="token function">createMainWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> width<span class="token punctuation">,</span> height <span class="token punctuation">}</span> <span class="token operator">=</span> screen<span class="token punctuation">.</span><span class="token function">getPrimaryDisplay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>workAreaSize
+    <span class="token keyword">const</span> mainWindow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BrowserWindow</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">width</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">1200</span><span class="token punctuation">,</span> width <span class="token operator">*</span> <span class="token number">0.8</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">height</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span> height <span class="token operator">*</span> <span class="token number">0.8</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">minWidth</span><span class="token operator">:</span> <span class="token number">800</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">minHeight</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">show</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">webPreferences</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">nodeIntegration</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">contextIsolation</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">preload</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../preload.js'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 加载主页面</span>
+    mainWindow<span class="token punctuation">.</span><span class="token function">loadFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../../renderer/windows/main/index.html'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 窗口准备就绪后显示</span>
+    mainWindow<span class="token punctuation">.</span><span class="token function">once</span><span class="token punctuation">(</span><span class="token string">'ready-to-show'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      mainWindow<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      mainWindow<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 存储窗口引用</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">,</span> mainWindow<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> mainWindow
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 创建设置窗口</span>
+  <span class="token function">createSettingsWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> settingsWindow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BrowserWindow</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">parent</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">modal</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">webPreferences</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">nodeIntegration</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">contextIsolation</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">preload</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../preload.js'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 加载设置页面</span>
+    settingsWindow<span class="token punctuation">.</span><span class="token function">loadFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../../renderer/windows/settings/index.html'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 存储窗口引用</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'settings'</span><span class="token punctuation">,</span> settingsWindow<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> settingsWindow
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 创建关于窗口</span>
+  <span class="token function">createAboutWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> aboutWindow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BrowserWindow</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">parent</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">modal</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">webPreferences</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">nodeIntegration</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">contextIsolation</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">preload</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../preload.js'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 加载关于页面</span>
+    aboutWindow<span class="token punctuation">.</span><span class="token function">loadFile</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../../renderer/windows/about/index.html'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 存储窗口引用</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'about'</span><span class="token punctuation">,</span> aboutWindow<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> aboutWindow
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置窗口事件</span>
+  <span class="token function">setupWindowEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 监听窗口关闭</span>
+    BrowserWindow<span class="token punctuation">.</span><span class="token function">getAllWindows</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">window</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'closed'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 从 Map 中移除窗口引用</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token keyword">of</span> <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">===</span> window<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取窗口</span>
+  <span class="token function">getWindow</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 关闭窗口</span>
+  <span class="token function">closeWindow</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> window <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>windows<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 关闭所有窗口</span>
+  <span class="token function">closeAllWindows</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    BrowserWindow<span class="token punctuation">.</span><span class="token function">getAllWindows</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">window</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WindowManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_2-数据库服务"><a href="#_2-数据库服务" class="header-anchor">#</a> 2. 数据库服务</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/main/services/database.js</span>
+<span class="token keyword">const</span> sqlite3 <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'sqlite3'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> open <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'sqlite'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">DatabaseService</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>db <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupDatabase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置数据库</span>
+  <span class="token keyword">async</span> <span class="token function">setupDatabase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 确保数据目录存在</span>
+    <span class="token keyword">const</span> dataDir <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span><span class="token function">getPath</span><span class="token punctuation">(</span><span class="token string">'userData'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'data'</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fs<span class="token punctuation">.</span><span class="token function">existsSync</span><span class="token punctuation">(</span>dataDir<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      fs<span class="token punctuation">.</span><span class="token function">mkdirSync</span><span class="token punctuation">(</span>dataDir<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">recursive</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// 打开数据库连接</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>db <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">filename</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>dataDir<span class="token punctuation">,</span> <span class="token string">'app.db'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">driver</span><span class="token operator">:</span> sqlite3<span class="token punctuation">.</span>Database
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 创建表</span>
+    <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createTables</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 创建表</span>
+  <span class="token keyword">async</span> <span class="token function">createTables</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 用户表</span>
+    <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 设置表</span>
+    <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      CREATE TABLE IF NOT EXISTS settings (
+        key TEXT PRIMARY KEY,
+        value TEXT NOT NULL,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 数据表</span>
+    <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      CREATE TABLE IF NOT EXISTS data (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        content TEXT,
+        user_id INTEGER,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (user_id) REFERENCES users (id)
+      )
+    </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 用户操作</span>
+  <span class="token keyword">async</span> <span class="token function">createUser</span><span class="token punctuation">(</span><span class="token parameter">username<span class="token punctuation">,</span> email</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>
+      <span class="token string">'INSERT INTO users (username, email) VALUES (?, ?)'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>username<span class="token punctuation">,</span> email<span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'SELECT * FROM users WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">updateUser</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fields <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> = ?</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> id<span class="token punctuation">]</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>
+      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">UPDATE users SET </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fields<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> WHERE id = ?</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+      values
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">deleteUser</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token string">'DELETE FROM users WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置操作</span>
+  <span class="token keyword">async</span> <span class="token function">getSetting</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'SELECT value FROM settings WHERE key = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">setSetting</span><span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>
+      <span class="token string">'INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 数据操作</span>
+  <span class="token keyword">async</span> <span class="token function">createData</span><span class="token punctuation">(</span><span class="token parameter">title<span class="token punctuation">,</span> content<span class="token punctuation">,</span> userId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>
+      <span class="token string">'INSERT INTO data (title, content, user_id) VALUES (?, ?, ?)'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span>title<span class="token punctuation">,</span> content<span class="token punctuation">,</span> userId<span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">getData</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'SELECT * FROM data WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">updateData</span><span class="token punctuation">(</span><span class="token parameter">id<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fields <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">key</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>key<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> = ?</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> id<span class="token punctuation">]</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>
+      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">UPDATE data SET </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fields<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, updated_at = CURRENT_TIMESTAMP WHERE id = ?</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+      values
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">deleteData</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token string">'DELETE FROM data WHERE id = ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 查询操作</span>
+  <span class="token keyword">async</span> <span class="token function">searchData</span><span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>
+      <span class="token string">'SELECT * FROM data WHERE title LIKE ? OR content LIKE ?'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">%</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>query<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">%</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">%</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>query<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">%</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 事务操作</span>
+  <span class="token keyword">async</span> <span class="token function">transaction</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">transaction</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 关闭数据库</span>
+  <span class="token keyword">async</span> <span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>db<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>db <span class="token operator">=</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatabaseService</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_3-更新服务"><a href="#_3-更新服务" class="header-anchor">#</a> 3. 更新服务</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/main/services/updater.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> autoUpdater <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron-updater'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> dialog <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> log <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron-log'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">UpdateService</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupUpdater</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置更新器</span>
+  <span class="token function">setupUpdater</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置日志</span>
+    autoUpdater<span class="token punctuation">.</span>logger <span class="token operator">=</span> log
+    autoUpdater<span class="token punctuation">.</span>logger<span class="token punctuation">.</span>transports<span class="token punctuation">.</span>file<span class="token punctuation">.</span>level <span class="token operator">=</span> <span class="token string">'info'</span>
+
+    <span class="token comment">// 配置更新选项</span>
+    autoUpdater<span class="token punctuation">.</span>autoDownload <span class="token operator">=</span> <span class="token boolean">false</span>
+    autoUpdater<span class="token punctuation">.</span>autoInstallOnAppQuit <span class="token operator">=</span> <span class="token boolean">true</span>
+
+    <span class="token comment">// 设置更新服务器</span>
+    autoUpdater<span class="token punctuation">.</span><span class="token function">setFeedURL</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">provider</span><span class="token operator">:</span> <span class="token string">'github'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">owner</span><span class="token operator">:</span> <span class="token string">'your-username'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">repo</span><span class="token operator">:</span> <span class="token string">'your-repo'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">token</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">GITHUB_TOKEN</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 监听更新事件</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupUpdateEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置更新事件</span>
+  <span class="token function">setupUpdateEvents</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 检查更新错误</span>
+    autoUpdater<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      dialog<span class="token punctuation">.</span><span class="token function">showErrorBox</span><span class="token punctuation">(</span><span class="token string">'更新错误'</span><span class="token punctuation">,</span> error<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 检查更新</span>
+    autoUpdater<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'checking-for-update'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'正在检查更新...'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 有可用更新</span>
+    autoUpdater<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'update-available'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">info</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'发现新版本:'</span><span class="token punctuation">,</span> info<span class="token punctuation">)</span>
+      dialog<span class="token punctuation">.</span><span class="token function">showMessageBox</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'info'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'发现新版本'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">发现新版本 </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>info<span class="token punctuation">.</span>version<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">，是否现在更新？</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">buttons</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'是'</span><span class="token punctuation">,</span> <span class="token string">'否'</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> response <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>response <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          autoUpdater<span class="token punctuation">.</span><span class="token function">downloadUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 没有可用更新</span>
+    autoUpdater<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'update-not-available'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">info</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'当前已是最新版本:'</span><span class="token punctuation">,</span> info<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 更新下载进度</span>
+    autoUpdater<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'download-progress'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">progress</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'下载进度:'</span><span class="token punctuation">,</span> progress<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 更新下载完成</span>
+    autoUpdater<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'update-downloaded'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">info</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'更新下载完成:'</span><span class="token punctuation">,</span> info<span class="token punctuation">)</span>
+      dialog<span class="token punctuation">.</span><span class="token function">showMessageBox</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'info'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'更新就绪'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'新版本已下载完成，是否立即安装？'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">buttons</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'是'</span><span class="token punctuation">,</span> <span class="token string">'否'</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> response <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>response <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          autoUpdater<span class="token punctuation">.</span><span class="token function">quitAndInstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 检查更新</span>
+  <span class="token keyword">async</span> <span class="token function">checkForUpdates</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> autoUpdater<span class="token punctuation">.</span><span class="token function">checkForUpdates</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'检查更新失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">throw</span> error
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 下载更新</span>
+  <span class="token keyword">async</span> <span class="token function">downloadUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> autoUpdater<span class="token punctuation">.</span><span class="token function">downloadUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'下载更新失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">throw</span> error
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 安装更新</span>
+  <span class="token keyword">async</span> <span class="token function">installUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> autoUpdater<span class="token punctuation">.</span><span class="token function">quitAndInstall</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'安装更新失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">throw</span> error
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UpdateService</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_4-安全服务"><a href="#_4-安全服务" class="header-anchor">#</a> 4. 安全服务</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/main/services/security.js</span>
+<span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> session <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Store <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron-store'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SecurityService</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupSecurity</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置安全选项</span>
+  <span class="token function">setupSecurity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置安全存储</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>store <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'secure-data'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">encryptionKey</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">generateEncryptionKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 配置会话安全</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupSessionSecurity</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 配置 CSP</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupCSP</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 生成加密密钥</span>
+  <span class="token function">generateEncryptionKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> crypto<span class="token punctuation">.</span><span class="token function">scryptSync</span><span class="token punctuation">(</span>
+      process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ENCRYPTION_PASSWORD</span> <span class="token operator">||</span> <span class="token string">'default-password'</span><span class="token punctuation">,</span>
+      process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">ENCRYPTION_SALT</span> <span class="token operator">||</span> <span class="token string">'default-salt'</span><span class="token punctuation">,</span>
+      <span class="token number">32</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置会话安全</span>
+  <span class="token function">setupSessionSecurity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置会话选项</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">setPermissionRequestHandler</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">webContents<span class="token punctuation">,</span> permission<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 允许的权限列表</span>
+      <span class="token keyword">const</span> allowedPermissions <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">'notifications'</span><span class="token punctuation">,</span>
+        <span class="token string">'media'</span>
+      <span class="token punctuation">]</span>
+
+      <span class="token comment">// 检查权限</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>allowedPermissions<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>permission<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">callback</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">callback</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 配置 Web 安全</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">setSpellCheckerDictionaryDownloadEnabled</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">setPreloads</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置 CSP</span>
+  <span class="token function">setupCSP</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置内容安全策略</span>
+    <span class="token keyword">const</span> csp <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+      default-src 'self';
+      script-src 'self';
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https:;
+      connect-src 'self' https:;
+      font-src 'self';
+      object-src 'none';
+      media-src 'self';
+      frame-src 'none';
+    </span><span class="token template-punctuation string">`</span></span>
+
+    <span class="token comment">// 应用 CSP</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span>webRequest<span class="token punctuation">.</span><span class="token function">onHeadersReceived</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">details<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">responseHeaders</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token operator">...</span>details<span class="token punctuation">.</span>responseHeaders<span class="token punctuation">,</span>
+          <span class="token string-property property">'Content-Security-Policy'</span><span class="token operator">:</span> <span class="token punctuation">[</span>csp<span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string-property property">'X-Content-Type-Options'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'nosniff'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string-property property">'X-Frame-Options'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'DENY'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token string-property property">'X-XSS-Protection'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'1; mode=block'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 加密数据</span>
+  <span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 生成随机 IV</span>
+      <span class="token keyword">const</span> iv <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">randomBytes</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>
+      
+      <span class="token comment">// 创建加密器</span>
+      <span class="token keyword">const</span> cipher <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createCipheriv</span><span class="token punctuation">(</span><span class="token string">'aes-256-gcm'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">generateEncryptionKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> iv<span class="token punctuation">)</span>
+      
+      <span class="token comment">// 加密数据</span>
+      <span class="token keyword">let</span> encrypted <span class="token operator">=</span> cipher<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">,</span> <span class="token string">'hex'</span><span class="token punctuation">)</span>
+      encrypted <span class="token operator">+=</span> cipher<span class="token punctuation">.</span><span class="token function">final</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span>
+      
+      <span class="token comment">// 获取认证标签</span>
+      <span class="token keyword">const</span> authTag <span class="token operator">=</span> cipher<span class="token punctuation">.</span><span class="token function">getAuthTag</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        encrypted<span class="token punctuation">,</span>
+        <span class="token literal-property property">iv</span><span class="token operator">:</span> iv<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">authTag</span><span class="token operator">:</span> authTag<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'加密失败: '</span> <span class="token operator">+</span> error<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 解密数据</span>
+  <span class="token function">decrypt</span><span class="token punctuation">(</span><span class="token parameter">encrypted<span class="token punctuation">,</span> iv<span class="token punctuation">,</span> authTag</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 创建解密器</span>
+      <span class="token keyword">const</span> decipher <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createDecipheriv</span><span class="token punctuation">(</span>
+        <span class="token string">'aes-256-gcm'</span><span class="token punctuation">,</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">generateEncryptionKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>iv<span class="token punctuation">,</span> <span class="token string">'hex'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+      
+      <span class="token comment">// 设置认证标签</span>
+      decipher<span class="token punctuation">.</span><span class="token function">setAuthTag</span><span class="token punctuation">(</span>Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>authTag<span class="token punctuation">,</span> <span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      
+      <span class="token comment">// 解密数据</span>
+      <span class="token keyword">let</span> decrypted <span class="token operator">=</span> decipher<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>encrypted<span class="token punctuation">,</span> <span class="token string">'hex'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span>
+      decrypted <span class="token operator">+=</span> decipher<span class="token punctuation">.</span><span class="token function">final</span><span class="token punctuation">(</span><span class="token string">'utf8'</span><span class="token punctuation">)</span>
+      
+      <span class="token keyword">return</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>decrypted<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'解密失败: '</span> <span class="token operator">+</span> error<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 安全存储数据</span>
+  <span class="token keyword">async</span> <span class="token function">secureStore</span><span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 加密数据</span>
+      <span class="token keyword">const</span> encrypted <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+      
+      <span class="token comment">// 存储加密数据</span>
+      <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>store<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> encrypted<span class="token punctuation">)</span>
+      
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'安全存储失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 安全获取数据</span>
+  <span class="token keyword">async</span> <span class="token function">secureRetrieve</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 获取加密数据</span>
+      <span class="token keyword">const</span> encrypted <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>store<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+      
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>encrypted<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span>
+      <span class="token punctuation">}</span>
+      
+      <span class="token comment">// 解密数据</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>
+        encrypted<span class="token punctuation">.</span>encrypted<span class="token punctuation">,</span>
+        encrypted<span class="token punctuation">.</span>iv<span class="token punctuation">,</span>
+        encrypted<span class="token punctuation">.</span>authTag
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'安全获取失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 安全删除数据</span>
+  <span class="token keyword">async</span> <span class="token function">secureDelete</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>store<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'安全删除失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 清除所有数据</span>
+  <span class="token keyword">async</span> <span class="token function">secureClear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>store<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'安全清除失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SecurityService</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_5-国际化支持"><a href="#_5-国际化支持" class="header-anchor">#</a> 5. 国际化支持</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/renderer/i18n/index.js</span>
+<span class="token keyword">const</span> i18n <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i18next'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> initReactI18next <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'react-i18next'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Backend <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'i18next-fs-backend'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">I18nService</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupI18n</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置国际化</span>
+  <span class="token keyword">async</span> <span class="token function">setupI18n</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 初始化 i18next</span>
+    <span class="token keyword">await</span> i18n
+      <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Backend<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>initReactI18next<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">// 默认语言</span>
+        <span class="token literal-property property">lng</span><span class="token operator">:</span> <span class="token string">'zh-CN'</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 回退语言</span>
+        <span class="token literal-property property">fallbackLng</span><span class="token operator">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 命名空间</span>
+        <span class="token literal-property property">ns</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'common'</span><span class="token punctuation">,</span> <span class="token string">'app'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">defaultNS</span><span class="token operator">:</span> <span class="token string">'common'</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 后端配置</span>
+        <span class="token literal-property property">backend</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">loadPath</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'locales/{{lng}}/{{ns}}.json'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 调试模式</span>
+        <span class="token literal-property property">debug</span><span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">// 插值配置</span>
+        <span class="token literal-property property">interpolation</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">escapeValue</span><span class="token operator">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 切换语言</span>
+  <span class="token keyword">async</span> <span class="token function">changeLanguage</span><span class="token punctuation">(</span><span class="token parameter">lng</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> i18n<span class="token punctuation">.</span><span class="token function">changeLanguage</span><span class="token punctuation">(</span>lng<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'切换语言失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取当前语言</span>
+  <span class="token function">getCurrentLanguage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> i18n<span class="token punctuation">.</span>language
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 获取可用语言</span>
+  <span class="token function">getAvailableLanguages</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> i18n<span class="token punctuation">.</span>languages
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 添加语言</span>
+  <span class="token keyword">async</span> <span class="token function">addLanguage</span><span class="token punctuation">(</span><span class="token parameter">lng<span class="token punctuation">,</span> resources</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> i18n<span class="token punctuation">.</span><span class="token function">addResourceBundle</span><span class="token punctuation">(</span>lng<span class="token punctuation">,</span> <span class="token string">'common'</span><span class="token punctuation">,</span> resources<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'添加语言失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">I18nService</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="性能优化"><a href="#性能优化" class="header-anchor">#</a> 性能优化</h2> <h3 id="_1-启动优化"><a href="#_1-启动优化" class="header-anchor">#</a> 1. 启动优化</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/main/index.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> app <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppOptimizer</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupOptimization</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置优化选项</span>
+  <span class="token function">setupOptimization</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 禁用硬件加速</span>
+    app<span class="token punctuation">.</span><span class="token function">disableHardwareAcceleration</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 设置进程优先级</span>
+    process<span class="token punctuation">.</span><span class="token function">setPriority</span><span class="token punctuation">(</span><span class="token string">'normal'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 配置内存限制</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'js-flags'</span><span class="token punctuation">,</span> <span class="token string">'--max-old-space-size=512'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 配置缓存</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置缓存</span>
+  <span class="token function">setupCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 配置会话缓存</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">clearCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">clearStorageData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">storages</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'cookies'</span><span class="token punctuation">,</span> <span class="token string">'filesystem'</span><span class="token punctuation">,</span> <span class="token string">'indexdb'</span><span class="token punctuation">,</span> <span class="token string">'localstorage'</span><span class="token punctuation">,</span> <span class="token string">'shadercache'</span><span class="token punctuation">,</span> <span class="token string">'websql'</span><span class="token punctuation">,</span> <span class="token string">'serviceworkers'</span><span class="token punctuation">,</span> <span class="token string">'cachestorage'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 设置缓存限制</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">setCacheSize</span><span class="token punctuation">(</span><span class="token number">100</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span> <span class="token comment">// 100MB</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 优化启动</span>
+  <span class="token keyword">async</span> <span class="token function">optimizeStartup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 延迟加载</span>
+    <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">delayLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 预加载资源</span>
+    <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">preloadResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 优化渲染</span>
+    <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">optimizeRendering</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 延迟加载</span>
+  <span class="token keyword">async</span> <span class="token function">delayLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 延迟加载非关键模块</span>
+    <span class="token keyword">const</span> modules <span class="token operator">=</span> <span class="token punctuation">[</span>
+      <span class="token string">'./services/database'</span><span class="token punctuation">,</span>
+      <span class="token string">'./services/updater'</span><span class="token punctuation">,</span>
+      <span class="token string">'./services/security'</span>
+    <span class="token punctuation">]</span>
+    
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> module <span class="token keyword">of</span> modules<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token function">require</span><span class="token punctuation">(</span>module<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 预加载资源</span>
+  <span class="token keyword">async</span> <span class="token function">preloadResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 预加载常用资源</span>
+    <span class="token keyword">const</span> resources <span class="token operator">=</span> <span class="token punctuation">[</span>
+      <span class="token string">'images/logo.png'</span><span class="token punctuation">,</span>
+      <span class="token string">'styles/main.css'</span><span class="token punctuation">,</span>
+      <span class="token string">'scripts/vendor.js'</span>
+    <span class="token punctuation">]</span>
+    
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> resource <span class="token keyword">of</span> resources<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token parameter">resolve</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        img<span class="token punctuation">.</span>onload <span class="token operator">=</span> resolve
+        img<span class="token punctuation">.</span>src <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> resource<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 优化渲染</span>
+  <span class="token keyword">async</span> <span class="token function">optimizeRendering</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 设置渲染选项</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'disable-gpu'</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'disable-software-rasterizer'</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span>commandLine<span class="token punctuation">.</span><span class="token function">appendSwitch</span><span class="token punctuation">(</span><span class="token string">'disable-gpu-compositing'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 设置窗口选项</span>
+    BrowserWindow<span class="token punctuation">.</span><span class="token function">getAllWindows</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">window</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span><span class="token function">setBackgroundColor</span><span class="token punctuation">(</span><span class="token string">'#ffffff'</span><span class="token punctuation">)</span>
+      window<span class="token punctuation">.</span><span class="token function">setHasShadow</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AppOptimizer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="_2-运行时优化"><a href="#_2-运行时优化" class="header-anchor">#</a> 2. 运行时优化</h3> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/main/services/performance.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> performance <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'perf_hooks'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> app<span class="token punctuation">,</span> BrowserWindow <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'electron'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">PerformanceService</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setupMonitoring</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 设置监控</span>
+  <span class="token function">setupMonitoring</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 监控 CPU 使用率</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">monitorCPU</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 监控内存使用</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">monitorMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 监控 GPU 使用</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">monitorGPU</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 监控网络请求</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">monitorNetwork</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 监控 CPU</span>
+  <span class="token function">monitorCPU</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> usage <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">cpuUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'CPU Usage:'</span><span class="token punctuation">,</span> usage<span class="token punctuation">)</span>
+      
+      <span class="token comment">// 检查 CPU 使用率</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>usage<span class="token punctuation">.</span>user <span class="token operator">+</span> usage<span class="token punctuation">.</span>system <span class="token operator">&gt;</span> <span class="token number">80</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleHighCPUUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 监控内存</span>
+  <span class="token function">monitorMemory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> memory <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">memoryUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Memory Usage:'</span><span class="token punctuation">,</span> memory<span class="token punctuation">)</span>
+      
+      <span class="token comment">// 检查内存使用</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>memory<span class="token punctuation">.</span>heapUsed <span class="token operator">&gt;</span> <span class="token number">500</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 500MB</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleHighMemoryUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 监控 GPU</span>
+  <span class="token function">monitorGPU</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    app<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'gpu-process-crashed'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> killed</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'GPU Process Crashed:'</span><span class="token punctuation">,</span> killed<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleGPUCrash</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 监控网络</span>
+  <span class="token function">monitorNetwork</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span>webRequest<span class="token punctuation">.</span><span class="token function">onCompleted</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">details</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Network Request:'</span><span class="token punctuation">,</span> details<span class="token punctuation">)</span>
+      
+      <span class="token comment">// 检查请求时间</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>details<span class="token punctuation">.</span>timeStamp <span class="token operator">&gt;</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 1秒</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">handleSlowRequest</span><span class="token punctuation">(</span>details<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 处理高 CPU 使用</span>
+  <span class="token function">handleHighCPUUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 降低进程优先级</span>
+    process<span class="token punctuation">.</span><span class="token function">setPriority</span><span class="token punctuation">(</span><span class="token string">'below-normal'</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 清理内存</span>
+    global<span class="token punctuation">.</span><span class="token function">gc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 通知用户</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">notifyUser</span><span class="token punctuation">(</span><span class="token string">'high-cpu'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 处理高内存使用</span>
+  <span class="token function">handleHighMemoryUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 清理内存</span>
+    global<span class="token punctuation">.</span><span class="token function">gc</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 清理缓存</span>
+    session<span class="token punctuation">.</span>defaultSession<span class="token punctuation">.</span><span class="token function">clearCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 通知用户</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">notifyUser</span><span class="token punctuation">(</span><span class="token string">'high-memory'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 处理 GPU 崩溃</span>
+  <span class="token function">handleGPUCrash</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 重启 GPU 进程</span>
+    app<span class="token punctuation">.</span><span class="token function">relaunch</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 处理慢请求</span>
+  <span class="token function">handleSlowRequest</span><span class="token punctuation">(</span><span class="token parameter">details</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 记录慢请求</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Slow Request:'</span><span class="token punctuation">,</span> details<span class="token punctuation">)</span>
+    
+    <span class="token comment">// 通知用户</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">notifyUser</span><span class="token punctuation">(</span><span class="token string">'slow-request'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 通知用户</span>
+  <span class="token function">notifyUser</span><span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> window <span class="token operator">=</span> BrowserWindow<span class="token punctuation">.</span><span class="token function">getFocusedWindow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span>webContents<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'performance:warning'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> type <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 性能分析</span>
+  <span class="token keyword">async</span> <span class="token function">profilePerformance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 开始分析</span>
+    <span class="token keyword">const</span> start <span class="token operator">=</span> performance<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 收集性能数据</span>
+    <span class="token keyword">const</span> cpu <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">cpuUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> memory <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">memoryUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> uptime <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token function">uptime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">// 结束分析</span>
+    <span class="token keyword">const</span> end <span class="token operator">=</span> performance<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">duration</span><span class="token operator">:</span> end <span class="token operator">-</span> start<span class="token punctuation">,</span>
+      cpu<span class="token punctuation">,</span>
+      memory<span class="token punctuation">,</span>
+      uptime
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PerformanceService</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="相关资源"><a href="#相关资源" class="header-anchor">#</a> 相关资源</h2> <ul><li><a href="https://www.electronjs.org/docs" target="_blank" rel="noopener noreferrer">Electron 文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.electronjs.org/docs/tutorial/security" target="_blank" rel="noopener noreferrer">Electron 安全指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.electronjs.org/docs/tutorial/performance" target="_blank" rel="noopener noreferrer">Electron 性能指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.electronjs.org/docs/tutorial/application-distribution" target="_blank" rel="noopener noreferrer">Electron 打包指南<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.sqlite.org/docs.html" target="_blank" rel="noopener noreferrer">SQLite 文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.i18next.com/" target="_blank" rel="noopener noreferrer">i18next 文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/sindresorhus/electron-store" target="_blank" rel="noopener noreferrer">Electron Store 文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.electron.build/auto-update" target="_blank" rel="noopener noreferrer">Electron Updater 文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/30/2025, 11:32:06 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/welcome/frontend/electron/cases/basic-app.html" class="prev">
+        基础应用开发
+      </a></span> <span class="next"><a href="/welcome/frontend/electron/cases/enterprise-app.html">
+        企业级应用开发
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/welcome/assets/js/app.c32994ef.js" defer></script><script src="/welcome/assets/js/2.f2b8224f.js" defer></script><script src="/welcome/assets/js/1.57fa854c.js" defer></script><script src="/welcome/assets/js/86.1af0833e.js" defer></script>
+  </body>
+</html>
